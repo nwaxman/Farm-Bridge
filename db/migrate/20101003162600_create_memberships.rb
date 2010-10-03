@@ -3,6 +3,7 @@ class CreateMemberships < ActiveRecord::Migration
     create_table :memberships do |t|
       t.integer :user_id
       t.integer :csa_id
+      t.text :share_notes
       t.timestamps
     end
   end

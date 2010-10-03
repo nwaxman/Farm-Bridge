@@ -32,10 +32,18 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation
 
 
+  def self.new_placeholder_user(opts)
+    pass = Digest::MD5.hexdigest((Time.now.to_i + rand(1000)).to_s)[0..8]
+    self.new :name => opts[:name], 
+             :login => opts[:email], 
+             :email => opts[:email], 
+             :password => pass, 
+             :password_confirmation => pass
+  end
+
   def to_s
     name.blank? ? login : name
   end
-
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #

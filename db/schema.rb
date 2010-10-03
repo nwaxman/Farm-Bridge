@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
   create_table "memberships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "csa_id"
+    t.text     "share_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

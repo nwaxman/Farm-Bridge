@@ -1,5 +1,7 @@
 Farmbridge::Application.routes.draw do
-  resources :csas
+  resources :csas do
+    resources :memberships
+  end
 
   resources :users
 
@@ -30,7 +32,7 @@ Farmbridge::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
