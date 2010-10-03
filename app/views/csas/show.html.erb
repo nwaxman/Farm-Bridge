@@ -3,6 +3,6 @@
 <h2>Members</h2>
 <ul>
   <% for user in @csa.users %>
-    <li><%= user %></li>
+    <li><%= user %> signed up at <%= user.created_at %> and here are the notes: <%= user.memberships.first.share_notes %></li>
   <% end %>
 </ul>
