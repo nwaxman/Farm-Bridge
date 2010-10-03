@@ -1,3 +1,5 @@
+<%= flash[:error] %>
+
 <h2>Signup for <%= @csa %></h2>
 
 <%= form_for :user, :url => csa_memberships_url(@csa), :method => :post do |f| -%>
