@@ -1,4 +1,6 @@
 Farmbridge::Application.routes.draw do
+  resources :csas
+
   resources :users
 
   resource :session, :only => [:new, :create, :destroy]
