@@ -1,0 +1,6 @@
+<%= form_for :csa, :url => csas_path do |f| -%>
+<p><%= label_tag 'name' %>: 
+<%= f.text_field :name %></p>
+
+<p><%= submit_tag 'Create' %></p>
+<% end -%>
