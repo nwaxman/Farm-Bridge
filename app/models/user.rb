@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
 
   set_table_name 'users'
+  
+  has_many :memberships
+  has_many :csas, :through => :memberships
 
   validates :login, :presence   => true,
                     :uniqueness => true,
@@ -28,6 +31,10 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
 
+
+  def to_s
+    name.blank? ? login : name
+  end
 
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.

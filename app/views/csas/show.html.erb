@@ -1,1 +1,8 @@
 <h1><%= @csa.name %></h1>
+
+<h2>Members</h2>
+<ul>
+  <% for user in @csa.users %>
+    <li><%= user %></li>
+  <% end %>
+</ul>
