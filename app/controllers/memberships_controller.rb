@@ -11,16 +11,15 @@ class MembershipsController < ApplicationController
     if logged_in?
       # just create a membership
     else
-      user = User.new_placeholder_user params[:user]
-      @membership = @csa.memberships.new :user => user, :share_notes => params[:membership][:share_notes]
-      success = @membership && @membership.save && user.save
-      if success && @membership.errors.empty?
+      begin
+        user = User.new_placeholder_user params[:user]
+        user.save!
+        @membership = @csa.memberships.new :user => user, :share_notes => params[:membership][:share_notes]
+        @membership.save!
         redirect_to "/csas/#{@csa.id}/memberships/#{@membership.id}"
-      else
-        flash.now[:error]  = "Something went wrong."
-        render :action => 'new'
+      rescue ActiveRecord::RecordInvalid => e
+        redirect_to "/csas/#{@csa.id}/memberships/new", {:flash => {:error => "Something went wrong: #{e}"}}
       end
-      # create a user and a membership
     end
   end
   
