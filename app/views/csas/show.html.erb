@@ -1,8 +1,16 @@
 <h1><%= @csa.name %></h1>
 
-<h2>Members</h2>
+<h2>Paid Members</h2>
+
 <ul>
-  <% for user in @csa.users %>
-    <li><%= user %> signed up at <%= user.created_at %> and here are the notes: <%= user.memberships.first.share_notes %></li>
+  <% for membership in @csa.paid_members %>
+    <li><%= membership.user %> signed up at <%= membership.user.created_at %> and here are the notes: <%= membership.share_notes %></li>
+  <% end %>
+</ul>
+
+<h2>Unpaid members</h2>
+<ul>
+  <% for membership in @csa.unpaid_members %>
+    <li><%= membership.user %> signed up at <%= membership.user.created_at %> and here are the notes: <%= membership.share_notes %></li>
   <% end %>
 </ul>

@@ -5,7 +5,7 @@ class CreateMemberships < ActiveRecord::Migration
       t.integer :csa_id
       t.text :share_notes
       t.boolean :manager
-      t.boolean :paid
+      t.boolean :paid, :default => false
       t.timestamps
     end
   end
