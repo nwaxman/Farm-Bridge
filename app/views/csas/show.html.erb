@@ -1,16 +1,32 @@
 <h1><%= @csa.name %></h1>
+<p><%= @csa.description %></p>
 
 <h2>Paid Members</h2>
-
+<% if @csa.paid_members.blank? %>
+  <p><em>none yet</em></p>
+<% else %>
 <ul>
   <% for membership in @csa.paid_members %>
     <li><%= membership.user %> signed up at <%= membership.user.created_at %> and here are the notes: <%= membership.share_notes %></li>
   <% end %>
 </ul>
+<% end %>
 
 <h2>Unpaid members</h2>
+<% if @csa.unpaid_members.blank? %>
+  <p><em>none yet</em></p>
+<% else %>
 <ul>
   <% for membership in @csa.unpaid_members %>
-    <li><%= membership.user %> signed up at <%= membership.user.created_at %> and here are the notes: <%= membership.share_notes %></li>
+    <li>
+      <p><b>User name</b>: <%= membership.user %></p>
+      <p><b>Signed up</b> at <%= membership.user.created_at %></p>
+      
+      <p><b>Share notes</b>: <%= membership.share_notes.blank? ? "none" :  membership.share_notes %></p>
+      <p>
+        <%#= button_to "Mark as paid", :controller => :memberships, :action => :update,  %>
+      </p>
+      </li>
   <% end %>
 </ul>
+<% end %>
