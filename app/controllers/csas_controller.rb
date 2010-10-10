@@ -5,7 +5,9 @@ class CsasController < ApplicationController
   
   def create
     @csa = Csa.new(params[:csa])
+    @csa.users << current_user
     success = @csa && @csa.save
+
     if success && @csa.errors.empty?
       redirect_to csa_path(@csa)
     else
