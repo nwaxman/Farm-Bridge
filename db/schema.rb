@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "phone"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

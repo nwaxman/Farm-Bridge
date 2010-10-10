@@ -9,6 +9,24 @@
   <%= f.text_field :email %>
 </p>
 <p>
+  <%= label_tag 'Address (line 1)' %>
+  <%= f.text_field :address_1 %>
+</p>
+<p>
+  <%= label_tag 'Address (line 2)' %>
+  <%= f.text_field :address_2 %>
+</p>
+<p>
+  <%= label_tag 'City' %>
+  <%= f.text_field :city %>
+  <%= label_tag 'State' %>
+  <%= f.text_field :state %>
+</p>
+<p>
+  <%= label_tag 'Zipcode' %>
+  <%= f.text_field :zip %>
+</p>
+<p>
   <%= label_tag 'share notes' %><br />
   <%= text_area_tag :share_notes, nil, {:name => "membership[share_notes]", :cols => 30, :rows => 5 } %>
 </p>
