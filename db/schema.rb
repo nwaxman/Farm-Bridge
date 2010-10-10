@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
 
   create_table "csas", :force => true do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
     t.integer  "user_id"
     t.integer  "csa_id"
     t.text     "share_notes"
+    t.boolean  "manager"
+    t.boolean  "paid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

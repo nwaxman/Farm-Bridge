@@ -4,6 +4,8 @@ class CreateMemberships < ActiveRecord::Migration
       t.integer :user_id
       t.integer :csa_id
       t.text :share_notes
+      t.boolean :manager
+      t.boolean :paid
       t.timestamps
     end
   end
