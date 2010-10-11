@@ -5,6 +5,7 @@ class MembershipsController < ApplicationController
   def show
     @membership = Membership.find params[:id]
   end
+  
   def create
 
     # does the user already exists?
