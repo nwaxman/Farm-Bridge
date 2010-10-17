@@ -5,5 +5,25 @@
 <%= label_tag "Describe your CSA. Include as much detail as you like." %><br />
 <%= f.text_area :description %></p>
 
+  <!-- CSA contact email ex: info@greenpointcsa.com -->
+  <%= label_tag 'contact_email' %>
+  <%= f.text_field :email %>
+</p>
+
+<p>
+  <!-- City where CSA located-->
+  
+  <%= label_tag 'City' %>
+  <%= f.text_field :city %>
+  <%= label_tag 'State' %>
+  <%= f.text_field :state %>
+
+</p>
+<p>
+  <!-- Zipcode where CSA is located -->	
+  <%= label_tag 'Zipcode' %>
+  <%= f.text_field :zip %>
+</p>
+
 <p><%= submit_tag 'Create' %></p>
 <% end -%>
