@@ -1,7 +1,13 @@
+Step 1 of 2:
+
+<h1> Step 1:
+	Fill out your CSA's basic info.</h1>	
+
 <%= form_for :csa, :url => csas_path do |f| -%>
 <p><%= label_tag 'name' %>: 
 <%= f.text_field :name %></p>
 <p>
+	
 <%= label_tag "Describe your CSA. Include as much detail as you like." %><br />
 <%= f.text_area :description %></p>
 
@@ -38,5 +44,5 @@
   <input type="text" name="statefield" value="The Value" /><br />
 
 </form>
-<p><%= submit_tag 'Create' %></p>
+<p><%= submit_tag 'Go to Step 2' %></p>
 <% end -%>
