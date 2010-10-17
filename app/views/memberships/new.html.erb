@@ -2,6 +2,7 @@
 
 <h2>Signup for <%= @csa %></h2>
 <%= form_for :user, :url => csa_memberships_url(@csa), :method => :post do |f| -%>
+<!-- :partial are snippets of frequent code, below is the address form code-->
 <%= render :partial => 'users/form', :locals => {:f => f} %>
 <p>
   <%= label_tag 'share notes' %><br />
