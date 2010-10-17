@@ -22,11 +22,6 @@
   <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
                                <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
 <% end -%>
-<div id="main">
-  <%= yield %>
-</div>
-
-
 
 
 <!-- This is the universal nav-bar for common tasks-->
@@ -36,6 +31,14 @@
 <p>People		<!-- Everyone In The Same CSA -->
 <p>Manage CSA	<!-- Only Appears On Logged Managers's Session -->
 </b>
+
+
+<!-- This is the MAIN -->
+<div id="main">
+  <%= yield %>
+</div>
+
+
 
 
 
