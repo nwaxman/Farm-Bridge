@@ -7,24 +7,36 @@
 
   <!-- Put in the Partial Code that generates an address field and contact info... -->
   <!-- CSA contact email ex: info@greenpointcsa.com -->
-  <%= label_tag 'contact_email' %>
-  <%= f.text_field :email %>
-</p>
+<form>
+	<%= label_tag "Email Contact" %> 
+	
+<input type="text" name="emailfield" value="The Value" /> <br />
 
-<p>
-  <!-- City where CSA located-->
-  
-  <%= label_tag 'City' %>
-  <%= f.text_field :city %>
-  <%= label_tag 'State' %>
-  <%= f.text_field :state %>
+	<%= label_tag "Phone Contact" %>
 
-</p>
-<p>
-  <!-- Zipcode where CSA is located -->	
-  <%= label_tag 'Zipcode' %>
-  <%= f.text_field :zip %>
-</p>
+	<!-- Contact Phone-->
+	<input type="text" name="contactphonefield" value="The Value" /> <br />
+	
+	<%= label_tag "CSA city" %>
 
+<!-- City where CSA located-->
+<input type="text" name="cityfield" value="The Value" /><br />
+
+	<%= label_tag "Neighborhood" %> 
+
+<!-- City where CSA located-->
+<input type="text" name="neighborhoodfield" value="The Value" /><br />
+
+<%= label_tag "CSA Zipcode" %> 
+
+<!-- Zipcode where CSA located-->
+  <input type="text" name="zipcodefield" value="The Value" /><br />
+
+<%= label_tag "State" %> 
+
+<!-- Zipcode where CSA located-->
+  <input type="text" name="statefield" value="The Value" /><br />
+
+</form>
 <p><%= submit_tag 'Create' %></p>
 <% end -%>
