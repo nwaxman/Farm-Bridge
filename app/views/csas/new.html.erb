@@ -1,14 +1,15 @@
-Step 1 of 2:
+Step 1: CSA Basic Info -> Step 2: CSA Farm Info -> Step 3: Additional Vendor Info
 
-<h1> Step 1:
-	Fill out your CSA's basic info.</h1>	
+<h1> Step 1: Fill out your CSA's basic info.</h1>	
 
+The first step to create your CSA is to provide some basic information and write a description. <br/>
 <%= form_for :csa, :url => csas_path do |f| -%>
-<p><%= label_tag 'name' %>: 
+<p><%= label_tag 'CSA Name' %>: 
 <%= f.text_field :name %></p>
 <p>
-	
-<%= label_tag "Describe your CSA. Include as much detail as you like." %><br />
+
+
+<%= label_tag "Describe your CSA. Include as much detail as you like." %> View a <a href="sample.htm">CSA description sample here.</a><br />
 <%= f.text_area :description %></p>
 
   <!-- Put in the Partial Code that generates an address field and contact info... -->
@@ -23,7 +24,7 @@ Step 1 of 2:
 	<!-- Contact Phone-->
 	<input type="text" name="contactphonefield" value="The Value" /> <br />
 	
-	<%= label_tag "CSA city" %>
+	<%= label_tag "City" %>
 
 <!-- City where CSA located-->
 <input type="text" name="cityfield" value="The Value" /><br />
@@ -33,7 +34,7 @@ Step 1 of 2:
 <!-- City where CSA located-->
 <input type="text" name="neighborhoodfield" value="The Value" /><br />
 
-<%= label_tag "CSA Zipcode" %> 
+<%= label_tag "Zipcode" %> 
 
 <!-- Zipcode where CSA located-->
   <input type="text" name="zipcodefield" value="The Value" /><br />
@@ -44,5 +45,5 @@ Step 1 of 2:
   <input type="text" name="statefield" value="The Value" /><br />
 
 </form>
-<p><%= submit_tag 'Go to Step 2' %></p>
+<p><%= submit_tag 'Go to Step 2: Set Up Your Farm' %></p>
 <% end -%>
