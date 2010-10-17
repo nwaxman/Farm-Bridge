@@ -10,6 +10,10 @@ class Csa < ActiveRecord::Base
     memberships.find(:all, :conditions => {:paid => false})
   end
   
+  def manager
+    memberships.find(:first, :conditions => {:manager => true}).user
+  end
+  
   def to_s
     name
   end

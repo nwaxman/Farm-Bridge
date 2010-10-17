@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
     t.integer  "csa_id"
     t.text     "share_notes"
     t.boolean  "manager"
-    t.boolean  "paid",        :default => false
+    t.boolean  "deposit_received", :default => false
+    t.boolean  "paid",             :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,9 @@
 <h1><%= @csa.name %></h1>
 <p><%= @csa.description %></p>
 
+Manager: <%= @csa.manager %>
+
+
 <h2>Paid Members</h2>
 <% if @csa.paid_members.blank? %>
   <p><em>none yet</em></p>
@@ -24,7 +27,9 @@
       
       <p><b>Share notes</b>: <%= membership.share_notes.blank? ? "none" :  membership.share_notes %></p>
       <p>
-        <%#= button_to "Mark as paid", :controller => :memberships, :action => :update,  %>
+		<%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership.id %>
+        <%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership %>
+		<%#= button_to "Add to Cart", :action => "add_to_cart",  %>
       </p>
       </li>
   <% end %>

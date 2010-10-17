@@ -35,8 +35,6 @@ class User < ActiveRecord::Base
   def self.new_placeholder_user(opts)
     pass = Digest::MD5.hexdigest((Time.now.to_i + rand(1000)).to_s)[0..8]
     
-    # This needs to get passed the opts[] with pass and other extra stuff put into it.
-    
     opts[:password] = pass
     opts[:password_confirmation] = pass
     opts[:login] = opts[:email]
