@@ -10,7 +10,7 @@ Manager: <%= @csa.manager %>
 <% else %>
 <ul>
   <% for membership in @csa.paid_members %>
-    <li><%= membership.user %> signed up at <%= membership.user.created_at %> and here are the notes: <%= membership.share_notes %></li>
+    <li><%= membership.user %> [<%= link_to 'edit', edit_membership_url(membership)  %>]</li></li>
   <% end %>
 </ul>
 <% end %>
