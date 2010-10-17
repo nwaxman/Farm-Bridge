@@ -2,18 +2,18 @@
 <html>
 <head>
   <title>Farmbridge</title>
+
+<!-- A CSA LOGO HERE -->
+
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+
 </head>
 <body>
   <h1>Farm Bridge</h1>
-<%= render :partial => "users/user_bar"  %>
 
-<div id="main">
-  <%= yield %>
-</div>
-
+<!-- Log In/Out -->
 <% if logged_in? -%>
   <div id="user-bar-greeting">Logged in as <%= link_to_current_user :content_method => :login %></div>
   <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
@@ -22,6 +22,21 @@
   <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
                                <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
 <% end -%>
+<div id="main">
+  <%= yield %>
+</div>
+
+
+
+
+<!-- This is the universal nav-bar for common tasks-->
+<b>
+<p>My CSA		<!-- News/Updates, Everything About My CSA -->
+<p>My Profile	<!-- Manage My Subscription, Edit User Info, Change Account Settings -->
+<p>People		<!-- Everyone In The Same CSA -->
+<p>Manage CSA	<!-- Only Appears On Logged Managers's Session -->
+</b>
+
 
 
 </body>
