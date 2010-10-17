@@ -21,6 +21,7 @@
   <%= f.text_field :city %>
   <%= label_tag 'State' %>
   <%= f.text_field :state %>
+
 </p>
 <p>
   <%= label_tag 'Zipcode' %>
@@ -30,6 +31,9 @@
   <%= label_tag 'share notes' %><br />
   <%= text_area_tag :share_notes, nil, {:name => "membership[share_notes]", :cols => 30, :rows => 5 } %>
 </p>
+
+Choose or Create Your CSA
+<a href="/csas/new"> Link </a>
 
 <p><%= submit_tag 'Create' %></p>
 <% end -%>
