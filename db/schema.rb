@@ -10,22 +10,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101003162600) do
+ActiveRecord::Schema.define(:version => 20101017181330) do
 
   create_table "csas", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "memberships", :force => true do |t|
-    t.integer  "user_id"
+  create_table "offerings", :force => true do |t|
     t.integer  "csa_id"
-    t.text     "share_notes"
-    t.boolean  "manager"
+    t.integer  "vendor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shares", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "offering_id"
     t.boolean  "deposit_received", :default => false
     t.boolean  "paid",             :default => false
+    t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,5 +56,12 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "vendors", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

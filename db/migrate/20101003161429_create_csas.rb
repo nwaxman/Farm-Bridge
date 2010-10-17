@@ -3,6 +3,7 @@ class CreateCsas < ActiveRecord::Migration
     create_table :csas do |t|
       t.string :name
       t.text :description
+      t.integer :manager_id
       t.timestamps
     end
   end
