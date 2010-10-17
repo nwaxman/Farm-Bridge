@@ -24,7 +24,17 @@ class MembershipsController < ApplicationController
     end
   end
   
+  def update
+    @membership = Membership.find params[:id]
+    @membership.update_attributes params[:membership]
+    redirect_to csa_url(@membership.csa)
+  end
+  
+  def edit
+    @membership = Membership.find params[:id]
+  end
+  
   def find_csa
-    @csa = Csa.find params[:csa_id]
+    @csa = Csa.find params[:csa_id] if params[:csa_id]
   end
 end

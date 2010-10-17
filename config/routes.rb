@@ -3,6 +3,8 @@ Farmbridge::Application.routes.draw do
     resources :memberships
   end
 
+  resources :memberships
+
   resources :users
 
   resource :session, :only => [:new, :create, :destroy]

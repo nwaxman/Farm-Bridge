@@ -15,6 +15,21 @@ Manager: <%= @csa.manager %>
 </ul>
 <% end %>
 
+<h2>Deposit Received Members</h2>
+
+<% if @csa.deposit_received_members.blank? %>
+<p><em>none</em></p>
+
+<% else %>
+
+<ul>
+	<% for membership in @csa.deposit_received_members %>
+    <li><%= membership.user %> [<%= link_to 'edit', edit_membership_url(membership)  %>]</li>
+	<% end %>
+</ul>
+
+<% end %>
+
 <h2>Unpaid members</h2>
 <% if @csa.unpaid_members.blank? %>
   <p><em>none yet</em></p>
@@ -27,6 +42,7 @@ Manager: <%= @csa.manager %>
       
       <p><b>Share notes</b>: <%= membership.share_notes.blank? ? "none" :  membership.share_notes %></p>
       <p>
+		<%= link_to "Edit this membership", edit_membership_url(membership) %>
 		<%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership.id %>
         <%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership %>
 		<%#= button_to "Add to Cart", :action => "add_to_cart",  %>

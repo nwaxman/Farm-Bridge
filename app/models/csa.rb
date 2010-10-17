@@ -2,6 +2,10 @@ class Csa < ActiveRecord::Base
   has_many :memberships
   has_many :users, :through => :memberships
   
+  def deposit_received_members
+    memberships.find(:all, :conditions => {:deposit_received => true, :paid => false})
+  end
+  
   def paid_members
     memberships.find(:all, :conditions => {:paid => true})
   end
