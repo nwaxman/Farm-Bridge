@@ -1,6 +1,12 @@
 <%= flash[:error] %>
 
 <h2>Signup for <%= @csa %></h2>
+<!-- this copy should be customizable by the CSA itself, so that they can add their own customized message -->
+<p>Welcome to the <%= @csa %> sign-up page. Fill in the information below to take the first step to join our community. <a href="ourCSA.html">Visit our information page</a> to learn more about our community, and what it means to be part of our CSA. Please note that your spot will be secured once your deposit is received.</p>
+
+<p>Deposit Due Date: XX/XX/XX</p>
+<p>Full Payment Due Date: XX/XX/XX</p>
+
 <%= form_for :user, :url => csa_memberships_url(@csa), :method => :post do |f| -%>
 <!-- :partial are snippets of frequent code, below is the address form code-->
 <%= render :partial => 'users/form', :locals => {:f => f} %>
@@ -9,8 +15,10 @@
   <%= text_area_tag :share_notes, nil, {:name => "membership[share_notes]", :cols => 30, :rows => 5 } %>
 </p>
 
-Choose or Create Your CSA
-<a href="/csas/new"> Link </a>
-
-<p><%= submit_tag 'Create' %></p>
+<p><%= submit_tag 'Sign-up' %></p>
 <% end -%>
+
+<!-- Things to think about:
+ 		- how to communicate about deposit and share payment due dates
+		- how to handle situations where users are signing up for a wait list
+-->
