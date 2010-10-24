@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      redirect_back_or_default('/', :notice => "Thanks for signing up!  We're sending you an email with your activation code.")
+      redirect_back_or_default('/dashboard', :notice => "Thanks for signing up!  We're sending you an email with your activation code.")
     else
       flash.now[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
