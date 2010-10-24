@@ -3,6 +3,10 @@ class CsasController < ApplicationController
     @csa = Csa.find(params[:id])
   end
   
+  def signup
+  
+  end
+  
   def create
     @csa = Csa.new(params[:csa])
     # @csa.users << current_user

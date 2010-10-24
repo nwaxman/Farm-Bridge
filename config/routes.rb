@@ -1,10 +1,11 @@
 Farmbridge::Application.routes.draw do
   resources :csas do
-    resources :memberships
     resources :offerings
+    resources :shares
   end
 
-  resources :memberships
+
+  resources :shares
   
   resources :vendors
   
@@ -14,6 +15,8 @@ Farmbridge::Application.routes.draw do
   resource :session, :only => [:new, :create, :destroy]
 
   match 'signup' => 'users#new', :as => :signup
+  
+  match '/csas/:csa_id/signup' => 'shares#new', :as => :member_signup
 
   match 'register' => 'users#create', :as => :register
 

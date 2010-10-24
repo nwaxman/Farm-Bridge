@@ -6,56 +6,41 @@ Manager: <%= @csa.manager %>
 
 <h2>Offerings</h2>
 
-<ul>
+<div id="offerings">
 <% @csa.offerings.each do |offering| %>
-  <li><%= offering %></li>
+  <div class="offering">
+    <h3><%= offering %></h3>
+    <h4>No Deposit</h4>
+    <% if offering.depositless_shares.blank? %>
+      <p><em>none</em></p>
+    <% else %>
+      <ul>
+      <% for share in offering.depositless_shares %>
+        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+      <% end %>
+      </ul>
+    <% end %>
+    <h4>Deposit Received</h4>
+    <% if offering.deposit_received_shares.blank? %>
+      <p><em>none</em></p>
+    <% else %>
+      <ul>
+      <% for share in offering.deposit_received_shares %>
+        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+      <% end %>
+      </ul>
+    <% end %>
+    <h4>Paid</h4>
+    <% if offering.paid_shares.blank? %>
+      <p><em>none</em></p>
+    <% else %>
+      <ul>
+      <% for share in offering.paid_shares %>
+        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
 <% end %>
-</ul>
-
-<h2>Paid Members</h2>
-<% if @csa.paid_members.blank? %>
-  <p><em>none yet</em></p>
-<% else %>
-<ul>
-  <% for membership in @csa.paid_members %>
-    <li><%= membership.user %> [<%= link_to 'edit', edit_membership_url(membership)  %>]</li></li>
-  <% end %>
-</ul>
-<% end %>
-
-<h2>Deposit Received Members</h2>
-
-<% if @csa.deposit_received_members.blank? %>
-<p><em>none</em></p>
-
-<% else %>
-
-<ul>
-	<% for membership in @csa.deposit_received_members %>
-    <li><%= membership.user %> [<%= link_to 'edit', edit_membership_url(membership)  %>]</li>
-	<% end %>
-</ul>
-
-<% end %>
-
-<h2>Unpaid members</h2>
-<% if @csa.unpaid_members.blank? %>
-  <p><em>none yet</em></p>
-<% else %>
-<ul>
-  <% for membership in @csa.unpaid_members %>
-    <li>
-      <p><b>User name</b>: <%= membership.user %></p>
-      <p><b>Signed up</b> at <%= membership.user.created_at %></p>
-      
-      <p><b>Share notes</b>: <%= membership.share_notes.blank? ? "none" :  membership.share_notes %></p>
-      <p>
-		<%= link_to "Edit this membership", edit_membership_url(membership) %>
-		<%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership.id %>
-        <%#= button_to "Mark as paid", :controller => :memberships, :action => :update, :id => membership %>
-		<%#= button_to "Add to Cart", :action => "add_to_cart",  %>
-      </p>
-      </li>
-  <% end %>
-</ul>
-<% end %>
+</div>
+<%= link_to 'add another offering', new_csa_offering_url(@csa) %>

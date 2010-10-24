@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
 
-describe "Member.users_for_csa" do
+describe "Member.members_for_csa" do
   before do
     @csa1 = mock(Csa, :name => "Csa1")
     @o = mock(Offering, :csa => @csa1)
@@ -15,7 +15,7 @@ describe "Member.users_for_csa" do
     @u3 = mock(User)
   end
   
-  it "should return all the users who have shares in any of the CSA's offerings" do
+  it "should return all members corresponding to the users who have shares in any of the CSA's offerings" do
     Member.users_for_csa(@csa1).should == [@u1,@u2]
   end
 

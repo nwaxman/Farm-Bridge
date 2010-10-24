@@ -1,0 +1,8 @@
+<h2>Edit share information</h2>
+<p>User: <%= @share.user %></p>
+<p>Offering: <%= @share.offering %></p>
+<% form_for @share, share_url(@share), :method => :put do |f| %>
+  <%= f.check_box :paid? %><%= label_tag "Paid?" %><br />
+  <%= f.check_box :deposit_received? %><%= label_tag "Deposit Received?" %><br />
+  <%= submit_tag "Update" %>
+<% end %>
