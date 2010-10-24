@@ -4,6 +4,14 @@
 Manager: <%= @csa.manager %>
 
 
+<h2>Offerings</h2>
+
+<ul>
+<% @csa.offerings.each do |offering| %>
+  <li><%= offering %></li>
+<% end %>
+</ul>
+
 <h2>Paid Members</h2>
 <% if @csa.paid_members.blank? %>
   <p><em>none yet</em></p>

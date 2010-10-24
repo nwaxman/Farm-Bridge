@@ -5,12 +5,13 @@ class CsasController < ApplicationController
   
   def create
     @csa = Csa.new(params[:csa])
-    @csa.users << current_user
+    # @csa.users << current_user
+    
+    @csa.manager_id = current_user.id
+
     success = @csa && @csa.save
     
-    membership = @csa.memberships.first
-    membership.manager = true
-    membership.save
+    
 
     if success && @csa.errors.empty?
       redirect_to csa_path(@csa)

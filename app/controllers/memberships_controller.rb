@@ -1,6 +1,5 @@
 class MembershipsController < ApplicationController
-  before_filter :find_csa  
-  
+  before_filter :find_csa    
   
   def show
     @membership = Membership.find params[:id]

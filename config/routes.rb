@@ -1,9 +1,13 @@
 Farmbridge::Application.routes.draw do
   resources :csas do
     resources :memberships
+    resources :offerings
   end
 
   resources :memberships
+  
+  resources :vendors
+  
 
   resources :users
 
