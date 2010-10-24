@@ -15,7 +15,16 @@ ActiveRecord::Schema.define(:version => 20101017181330) do
   create_table "csas", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "manager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "csa_id"
+    t.text     "share_notes"
+    t.boolean  "manager"
+    t.boolean  "paid",        :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
