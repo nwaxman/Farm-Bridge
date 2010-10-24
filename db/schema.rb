@@ -14,6 +14,11 @@ ActiveRecord::Schema.define(:version => 20101003162600) do
 
   create_table "csas", :force => true do |t|
     t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "state"
+    t.string   "neighborhood"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

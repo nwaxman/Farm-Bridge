@@ -1,51 +1,37 @@
-Step 1 of 2:
+Step 1: CSA Basic Info -> Step 2: CSA Farm Info -> Step 3: Additional Vendor Info
 
 <h1> Step 1:
 	Fill out your CSA's basic info.</h1>	
     Want an example? Here's a <a href="sample.html" />sample.</a>
 
-<%= form_for :csa, :url => csas_path do |f| -%>
-<p><%= label_tag 'name' %>: 
-<%= f.text_field :name %></p>
-<p>
+
+The first step to create your CSA is to provide some basic information and write a description. <br/>
+<% form_for :csa, :url => csas_path do |f| -%>
+	<p><%= label_tag 'CSA Name' %>: 
+	<%= f.text_field :name %></p>
 	
-<%= label_tag "Describe your CSA. Include as much detail as you like." %><br />
-<%= f.text_area :description %></p>
+	<p>
+	<%= label_tag "Describe your CSA. Include as much detail as you like." %> View a <a href="sample.htm">CSA description sample here.</a><br />
+	<%= f.text_area :description %></p>
 
   <!-- Put in the Partial Code that generates an address field and contact info... -->
   <!-- CSA contact email ex: info@greenpointcsa.com -->
-<form>
-	<%= label_tag "Email Contact" %> 
+	<p><%= label_tag "Email Contact" %> 
+	<%= f.text_field :email %></p>
+
+	<p><%= label_tag "Phone Contact" %>
+	<%= f.text_field :phone %></p>
 	
-<input type="text" name="emailfield" value="The Value" /> <br />
+	<p><%= label_tag "City" %>
+	<%= f.text_field :city %></p>
 
-	<%= label_tag "Phone Contact" %>
+	<p><%= label_tag "Neighborhood" %> 
+	<%= f.text_field :neighborhood %></p>
 
-	<!-- Contact Phone-->
-	<input type="text" name="contactphonefield" value="The Value" /> <br />
-	
-	<%= label_tag "CSA city" %>
+	<p><%= label_tag "State" %> 
+	<%= f.text_field :state %></p>
 
-<!-- City where CSA located-->
-<input type="text" name="cityfield" value="The Value" /><br />
-
-	<%= label_tag "Neighborhood" %> 
-
-<!-- City where CSA located-->
-<input type="text" name="neighborhoodfield" value="The Value" /><br />
-
-<%= label_tag "CSA Zipcode" %> 
-
-<!-- Zipcode where CSA located-->
-  <input type="text" name="zipcodefield" value="The Value" /><br />
-
-<%= label_tag "State" %> 
-
-<!-- Zipcode where CSA located-->
-  <input type="text" name="statefield" value="The Value" /><br />
-
-</form>
-<p><%= submit_tag 'Go to Step 2' %></p>
+<p><%= submit_tag 'Go to Step 2: Set Up Your Farm' %></p>
 <% end -%>
 <!-- Step 2: Vendor/Farm Setup-->
 <!-- Added feature: Save setup so people can exit when needed but have info saved -->
