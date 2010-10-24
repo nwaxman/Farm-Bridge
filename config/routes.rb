@@ -9,6 +9,8 @@ Farmbridge::Application.routes.draw do
 
   resource :session, :only => [:new, :create, :destroy]
 
+  match 'dashboard' => 'users#dashboard', :as => :dashboard
+
   match 'signup' => 'users#new', :as => :signup
 
   match 'register' => 'users#create', :as => :register
