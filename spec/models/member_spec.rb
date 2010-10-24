@@ -18,7 +18,7 @@ describe "Member.users_for_csa" do
   it "should return all the users who have shares in any of the CSA's offerings" do
     Member.users_for_csa(@csa1).should == [@u1,@u2]
   end
-  it "should not return any user who doesn't have shares in any of the CSA's offerings"
+
 end
 
 describe "Member.csas_for_user with shares"  do
