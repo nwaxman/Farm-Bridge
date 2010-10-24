@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- 
 Session Check:
 First time users will automatically get directed to the FIRST TIME AROUND? display message below.
@@ -26,3 +27,47 @@ If you are ready to get started setting up your CSA <a href="http://localhost:30
 <% end %>
 </ul>
 -->
+=======
+
+<% if logged_in? -%>
+
+
+	<!-- 	
+		The content of this page will vary based on whether the user has already set-up a CSA: 
+			- If users has not set-up a CSA he will be prompt to set one up
+			- If CSA is set-up and membership drive is open than user will get an update regarding his membership
+			- If membership drive is closed then user will get an update regarding workshifts and distributions
+
+			The content sample below assumes this is a new user who has not yet set-up a CSA
+		-->
+
+
+	<h1>Welcome to FarmBridge <%= current_user %></h1>
+
+		<h2>First Time Around?</h2>
+		<p>Setting up a CSA on FarmBridge is easy. Learn how by watching this short instructional video [Video to Go Here].</p>
+
+		<h2>Ready? Set Up Your CSA in Three Easy Steps </h2>
+		<p>If you are ready to get started setting up your CSA <a href="http://localhost:3000/csas/new">jump into step 1</a></p>.
+
+
+		<!-- do we need to list everyone in FarmBridge?
+		<h1>All Users</h1>
+
+		<ul>
+			<% for user in User.all %>
+  			<li><%= user.login %></li>
+			<% end %>
+			</ul>
+		-->
+
+<% else -%>
+
+	<h1>Welcome to FarmBridge</h1>
+
+		<h2>FarmBridge helps CSAs thrive</h2>
+		<p>FarmBridge offers communities an online platform for management and connecting to each other.</p>
+
+
+<% end -%>
+>>>>>>> 18afd0e7b8fbd5eaabeda11e99dfaf3c9fd8398f
