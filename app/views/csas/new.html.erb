@@ -2,6 +2,7 @@ Step 1 of 2:
 
 <h1> Step 1:
 	Fill out your CSA's basic info.</h1>	
+    Want an example? Here's a <a href="sample.html" />sample.</a>
 
 <%= form_for :csa, :url => csas_path do |f| -%>
 <p><%= label_tag 'name' %>: 
@@ -46,3 +47,6 @@ Step 1 of 2:
 </form>
 <p><%= submit_tag 'Go to Step 2' %></p>
 <% end -%>
+<!-- Step 2: Vendor/Farm Setup-->
+<!-- Added feature: Save setup so people can exit when needed but have info saved -->
+
