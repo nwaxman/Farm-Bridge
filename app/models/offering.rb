@@ -9,7 +9,7 @@ class Offering < ActiveRecord::Base
   end
   
   def depositless_shares
-    shares.select{|s| !s.deposit_received?}
+    shares.select{|s| !s.deposit_received? && !s.paid?}
   end
   
   def deposit_received_shares
