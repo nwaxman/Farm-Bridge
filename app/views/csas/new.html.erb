@@ -1,10 +1,7 @@
-<p>Step 1: Manager Profile -> Step 2: CSA Profile -> Step 3: Add Offerings</p>
+<p>Step 1: Manager Profile -> <strong>Step 2: CSA Profile</strong> -> Step 3: Add Offerings</p>
 
-<h1> Step 1:
-	Fill out your CSA's basic info.</h1>	
-    Want an example? Here's a <a href="sample.html" />sample.</a>
-
-The first step to create your CSA is to provide some basic information and write a description. <br/>
+<h1> Step 2: Complete Your CSA Profile.</h1>	
+<p>To complete your CSA profile you will need to provide some basic information and write a description of your community.</p>
 <% form_for :csa, :url => csas_path do |f| -%>
 	<p><%= label_tag 'CSA Name' %>: 
 	<%= f.text_field :name %></p>
@@ -30,8 +27,9 @@ The first step to create your CSA is to provide some basic information and write
 	<p><%= label_tag "State" %> 
 	<%= f.text_field :state %></p>
 
-<p><%= submit_tag 'Go to Step 2: Set Up Your Farm' %></p>
+<p><%= submit_tag 'Step 3: Set Up Your Offerings' %> <%= submit_tag 'Save CSA Profile and Invite Members' %></p>
+<!-- Change needed here: need to allow people to either save information and go to  -->
+
+
 <% end -%>
-<!-- Step 2: Vendor/Farm Setup-->
-<!-- Added feature: Save setup so people can exit when needed but have info saved -->
 

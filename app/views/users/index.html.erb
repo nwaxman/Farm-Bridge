@@ -1,5 +1,11 @@
+<% if logged_in? -%>
+	<h1>Welcome Back to FarmBridge</h1>
+	<br>
+	<h2>Ready to Finish Your Set-Up?</h2>
+	<p>You have only two steps to go. <%= link_to "Start by completing your CSA profile.", new_csa_url  %></p> 
 
 
+<% else -%>
 	<h1>Welcome to FarmBridge</h1>
 	<br>
 		<h2>Helping your CSAs thrive</h2>
@@ -12,6 +18,8 @@
 			<li>complete a CSA profile</li>
 			<li>add your CSA offerings</li>
 		</ol>
-		<p>Now you're ready to get started. <a href="signup/"> Sign-up on FarmBridge and set-up your CSA.</a></p>
+		<p>Now you're ready to get started. <%= link_to "Sign-up on FarmBridge and set-up your CSA.", signup_url %> </p>
 		<p>[VIDEO SPACE HOLDER]</a></p>
 		
+
+<% end -%>
