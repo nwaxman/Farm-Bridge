@@ -250,3 +250,10 @@ color: #54b539;
 	letter-spacing: -1px;
 	font-size: 24px;
 }
+
+
+.offering {
+	border:#ccc 1px solid;
+	margin: 10px auto;
+	padding: 10px 0 0 10px;
+}
