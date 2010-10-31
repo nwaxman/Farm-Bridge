@@ -28,7 +28,19 @@
 <!-- This is the MENU -->
 		<div id="menu">
 			<ul>
-				<li><a href="#" accesskey="1" title="">My CSA</a></li>
+				
+				
+				<% if logged_in? %>
+				
+					<% csa = Member.managed_csa_for_user(current_user) 
+				
+					if !csa.blank? %>
+					
+						<li><%= link_to csa.name, csa_url(csa) %></li>
+						
+					<% end %>
+				
+				<% end %>
 				<li class="active"><a href="#" accesskey="2" title="">My Profile</a></li>
 				<!-- <li><a href="#" accesskey="3" title="">People</a></li>
 				<li><a href="#" accesskey="4" title="">Manager Panel</a></li> -->

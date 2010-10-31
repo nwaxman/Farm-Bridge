@@ -15,4 +15,8 @@ class Member
       Member.new :user => share.user
     end
   end
+  
+  def self.managed_csa_for_user(user)
+    Csa.find :first, :conditions => {:manager_id => user.id}
+  end
 end
