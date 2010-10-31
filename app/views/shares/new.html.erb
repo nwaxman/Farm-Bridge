@@ -1,0 +1,23 @@
+<%= flash[:error] %>
+
+<h2>Signup for <%= @csa %></h2>
+<%= form_for :user, :url => csa_shares_url(@csa), :method => :post do |f| -%>
+  <p>
+    <h4><%= label_tag 'Offerings' %></h4>
+    <% for offering in @csa.offerings %>
+      <%= check_box_tag "offerings[#{offering.id}]" %> <label><%= offering %></label><br />
+    <% end %>
+  </p>
+  
+  <h4>Personal information</h4>
+  <%= render :partial => 'users/form', :locals => {:f => f} %>
+  <p>
+    <%= label_tag 'share notes' %><br />
+    <%= text_area_tag :share_notes, nil, {:name => "notes", :cols => 30, :rows => 5 } %>
+  </p>
+  
+  Choose or Create Your CSA
+  <a href="/csas/new"> Link </a>
+  
+  <p><%= submit_tag 'Create' %></p>
+<% end -%>
