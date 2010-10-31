@@ -17,7 +17,7 @@ class CsasController < ApplicationController
     
 
     if success && @csa.errors.empty?
-      redirect_to new_csa_offering_path(@csa)
+      redirect_to csa_path(@csa)
     else
       flash.now[:error]  = "Something went wrong."
       render :action => 'new'
