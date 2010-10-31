@@ -148,7 +148,8 @@ a:hover {
 
 #posts {
 	float: left;
-	width: 510px;
+/*	width: 510px;
+*/	width: 754px;
 }
 
 #posts .post {

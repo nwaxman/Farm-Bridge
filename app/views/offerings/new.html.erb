@@ -1,14 +1,7 @@
 <h2>Add a new Vendor Offering for <%= @csa %></h2>
 <%= form_for :offering, :url => csa_offerings_url, :method => :post do |f| -%>
   
-  <p>
-    <%= label_tag "Name" %>
-    <%= text_field_tag "vendor[name]" %>
-  </p>
-  <p>
-    <%= label_tag "Description" %><br />
-    <%= text_area_tag "vendor[description]", nil, {:cols => 50, :rows => 5} %>
-  </p>
+ <%= render :partial => 'form' %>
   <p>
     <%= submit_tag "Create" %>
   </p>

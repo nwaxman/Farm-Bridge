@@ -12,6 +12,13 @@ class VendorsController < ApplicationController
     end
   end
   
+  def update
+    @vendor = Vendor.find params[:id]
+    @vendor.update_attributes params[:vendor]
+    redirect_to csa_url(@vendor.csas.first) # this is a HACK
+  end
+  
+  
   def show
     @vendor = Vendor.find params[:id]
   end
