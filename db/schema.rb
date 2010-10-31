@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20101017181330) do
   create_table "vendors", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
