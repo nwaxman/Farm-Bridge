@@ -5,9 +5,13 @@ class OfferingsController < ApplicationController
     @offering = @csa.offerings.new
   end
   
+  def edit
+    @offering = Offering.find params[:id]
+  end
+  
   def create
     begin
-      @vendor = Vendor.create! params[:vendor]
+      @vendor = current_user.vendors.create! params[:vendor]
       @offering = Offering.create! :vendor => @vendor, :csa => @csa
       redirect_to csa_url(@csa)
     rescue ActiveRecord::RecordInvalid => e

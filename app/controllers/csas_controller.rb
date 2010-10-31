@@ -10,7 +10,6 @@ class CsasController < ApplicationController
   def create
     @csa = Csa.new(params[:csa])
     # @csa.users << current_user
-    
     @csa.manager_id = current_user.id
 
     success = @csa && @csa.save
