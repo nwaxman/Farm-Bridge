@@ -13,7 +13,15 @@
 <!-- This is LOGO/TITLE	 -->
 		<div id="header">
 			<h1>Farm Bridge</h1>
-			<h2>DEMO</h2>
+			<h2><% if logged_in? -%>
+			  <div id="user-bar-greeting">Logged in as <%= link_to_current_user :content_method => :login %></div>
+			  <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
+
+			<% else -%>
+			  <div id="user-bar-greeting"><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></div>
+			  <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
+			                               <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
+			<% end -%></h2>
 		</div>
 	
 
@@ -44,21 +52,12 @@
 				<div id="links">
 					<ul>
 						<li>
-							<h2>Log In/Out</h2>
+							<h2>Sidebar</h2>
 							<ul>
-								<li><a href="#"><!-- Log In/Out -->
-								<% if logged_in? -%>
-								  <div id="user-bar-greeting">Logged in as <%= link_to_current_user :content_method => :login %></div>
-								  <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
-
-								<% else -%>
-								  <div id="user-bar-greeting"><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></div>
-								  <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
-								                               <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
-								<% end -%></a> </li>
-								<!-- <li><a href="#">Item 2</a> </li>
+								<li><a href="#">FB Black Magic</a> </li>
+								<li><a href="#">Whatever Function</a> </li>
 								<li><a href="#">Item 3</a> </li>
-								<li><a href="#">Item 4</a> </li> -->
+								<li><a href="#">Item 4</a> </li>
 							</ul>
 						</li>
 					</ul>
