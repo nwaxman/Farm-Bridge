@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :shares
   has_many :offerings, :through => :shares
 
+  has_many :vendors
+
   set_table_name 'users'
   
 
