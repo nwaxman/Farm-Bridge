@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20101017181330) do
     t.string   "state"
     t.string   "neighborhood"
     t.text     "description"
+    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

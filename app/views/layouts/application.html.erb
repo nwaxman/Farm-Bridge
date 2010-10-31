@@ -20,7 +20,7 @@
 			<% else -%>
 			  <div id="user-bar-greeting"><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></div>
 			  <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
-			                               <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
+			                              <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
 			<% end -%></h2>
 		</div>
 	
@@ -31,18 +31,18 @@
 				
 				
 				<% if logged_in? %>
-				
 					<% csa = Member.managed_csa_for_user(current_user) 
-				
 					if !csa.blank? %>
-					
 						<li><%= link_to csa.name, csa_url(csa) %></li>
-						
 					<% end %>
-				
 				<% end %>
-				<li class="active"><a href="#" accesskey="2" title="">My Profile</a></li>
-				<!-- <li><a href="#" accesskey="3" title="">People</a></li>
+				
+				<% if logged_in? %>
+				<li><%= link_to "My Profile", current_user %></li>
+				<% end %>
+				
+				<!-- <li><a href="#" accesskey="2" title="">My Profile</a></li>
+				<li><a href="#" accesskey="3" title="">People</a></li>
 				<li><a href="#" accesskey="4" title="">Manager Panel</a></li> -->
 			</ul>
 		</div>
