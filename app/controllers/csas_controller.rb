@@ -10,7 +10,6 @@ class CsasController < ApplicationController
   def create
     @csa = Csa.new(params[:csa])
     # @csa.users << current_user
-    
     @csa.manager_id = current_user.id
 
     success = @csa && @csa.save
@@ -18,7 +17,7 @@ class CsasController < ApplicationController
     
 
     if success && @csa.errors.empty?
-      redirect_to csa_path(@csa)
+      redirect_to new_csa_offering_path(@csa)
     else
       flash.now[:error]  = "Something went wrong."
       render :action => 'new'
