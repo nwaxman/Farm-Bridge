@@ -4,10 +4,11 @@
 Manager: <%= @csa.manager %>
 
 
+
+<div id="offerings">  
+<% @csa.offerings.each do |offering| %>
 <h2>Offerings</h2>
 
-<div id="offerings">
-<% @csa.offerings.each do |offering| %>
   <div class="offering">
     <h3><%= offering %></h3>
     <h4>No Deposit</h4>
