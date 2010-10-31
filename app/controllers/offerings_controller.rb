@@ -5,6 +5,10 @@ class OfferingsController < ApplicationController
     @offering = @csa.offerings.new
   end
   
+  def edit
+    @offering = Offering.find params[:id]
+  end
+  
   def create
     begin
       @vendor = current_user.vendors.create! params[:vendor]
