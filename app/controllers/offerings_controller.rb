@@ -7,7 +7,7 @@ class OfferingsController < ApplicationController
   
   def create
     begin
-      @vendor = Vendor.create! params[:vendor]
+      @vendor = current_user.vendors.create! params[:vendor]
       @offering = Offering.create! :vendor => @vendor, :csa => @csa
       redirect_to csa_url(@csa)
     rescue ActiveRecord::RecordInvalid => e
