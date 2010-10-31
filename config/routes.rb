@@ -1,9 +1,14 @@
 Farmbridge::Application.routes.draw do
   resources :csas do
-    resources :memberships
+    resources :offerings
+    resources :shares
   end
 
-  resources :memberships
+
+  resources :shares
+  
+  resources :vendors
+  
 
   resources :users
 
@@ -12,6 +17,8 @@ Farmbridge::Application.routes.draw do
   match 'dashboard' => 'users#dashboard', :as => :dashboard
 
   match 'signup' => 'users#new', :as => :signup
+  
+  match '/csas/:csa_id/signup' => 'shares#new', :as => :member_signup
 
   match 'register' => 'users#create', :as => :register
 

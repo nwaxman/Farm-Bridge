@@ -5,10 +5,11 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
+  has_many :shares
+  has_many :offerings, :through => :shares
+
   set_table_name 'users'
   
-  has_many :memberships
-  has_many :csas, :through => :memberships
 
   validates :login, :presence   => true,
                     :uniqueness => true,
@@ -30,6 +31,10 @@ class User < ActiveRecord::Base
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
+
+  def csas
+    Member.csas_for_user(self)
+  end
 
 
   def self.new_placeholder_user(opts)
