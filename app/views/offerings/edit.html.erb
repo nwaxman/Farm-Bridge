@@ -1,0 +1,8 @@
+<h2>Add information about your vendor</h2>
+<%= form_for :offering, :url => vendor_url(@offering.vendor), :html => {:method => :put} do |f| -%>
+  
+ <%= render :partial => 'form', :locals => {:offering => @offering} %>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>

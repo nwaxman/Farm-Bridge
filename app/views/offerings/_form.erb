@@ -1,0 +1,8 @@
+ <p>
+    <%= label_tag "Name" %>
+    <%= text_field_tag "vendor[name]", (@offering.vendor ? @offering.vendor.name : "")  %>
+  </p>
+  <p>
+    <%= label_tag "Description" %><br />
+    <%= text_area_tag "vendor[description]", (@offering.vendor ? @offering.vendor.description : ""), {:cols => 50, :rows => 5} %>
+  </p>
