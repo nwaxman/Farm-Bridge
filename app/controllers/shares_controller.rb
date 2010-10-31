@@ -31,8 +31,6 @@ class SharesController < ApplicationController
     rescue ActiveRecord::RecordInvalid => e
         redirect_to "/csas/#{@csa.id}/signup", {:flash => {:error => "Something went wrong: #{e}"}}
     end
-    
-   
   end
   
   def find_csa
