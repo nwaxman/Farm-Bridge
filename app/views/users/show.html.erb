@@ -7,12 +7,10 @@
 <p> Address: <%= current_user.address_1 %> <%= current_user.address_2 %> <%= current_user.city %> <%= current_user.state %> <%= current_user.zip %>	
 
 <h3>CSAs</h3>
-<% if current_user.csas.blank? %>
-<p><em>none yet</em></p>
+
+<% csa = Member.managed_csa_for_user(current_user) 
+if csa.blank? %>
+	No CSA yet
 <% else %>
-<ul>
-  <% for csa in current_user.csas %>
-    <li><%= csa %></li>
-  <% end %>
-</ul>
+	<%= csa.name %>
 <% end %>

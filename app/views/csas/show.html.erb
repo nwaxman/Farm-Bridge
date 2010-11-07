@@ -5,8 +5,6 @@
   
 <h2>Members</h2>
 
-
-
 <div class="tabletitle">
 <table>
 <tr>
@@ -18,7 +16,8 @@
 </div>
 
 <% Member.members_for_csa(@csa).each do |member| 
-   shares = member.user.shares %>
+  
+	shares = member.user.shares %>
 	
 	<div class="tablewrapper">
 	<table>
