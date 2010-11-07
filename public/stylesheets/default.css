@@ -258,38 +258,93 @@ color: #54b539;
 	padding: 10px 0 0 10px;
 }
 
-.tabletitle {
-	border:#ccc 1px solid;
+table.membertable 
+{
+	width: 100%;
+	border-width: 1px;
+	border-spacing: ;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+table.membertable th
+{
 	margin: 10px auto;
-	padding: 10px 0 0 10px;
 	font-size: 14px;
 	font-weight: bold;	
 	text-align: left;
 	text-transform:uppercase;
+	border-width: 1px;
+	padding: 0px;
+	border-color: red;
 }
 
-.tablewrapper {
+table.membertable td 
+{
+	border-width: 1px;
+	padding: 0px;
+	border-color: gray;
 	border:#ccc 1px solid;
-	margin: 10px auto;
 	padding: 10px 0 0 10px;
 	text-align: left;
 	vertical-align:text-top;
 }
 
-td.tbname{
-	width:180px;
+td.tbname
+{
+	width:25%;
 }
 
 td.tbshare{
-	width:250px;
+	width:auto;
 }
 
-td.tbpayment{
-	width:250px;
+td.tbpayment
+{
+	width:15%;
 }
 
+/* Rune tabbed interface */
 
-.tabletext {
+.tabbox
+{
+	width: 100%;
+	margin-top: 30px;
+}
+
+.tabnav 
+{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.tabnav li 
+{
+	display: inline;
+	list-style: none;
+	padding-right: 5px;
+}
+
+.tabnav li a 
+{
+	text-decoration: none;
+	color: #222;
+	font-weight: bold;
+	padding: 4px 6px;
+	outline: none;
+}
 	
+.tabnav li a:hover, .tabnav li a:active, .tabnav li.ui-tabs-selected a 
+{
+	background: #91c77a;
+	text-decoration: none;
 }
+
+.ui-tabs-hide 
+{
+	display: none;
+}
+
 
