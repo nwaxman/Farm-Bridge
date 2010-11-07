@@ -1,5 +1,9 @@
 <%= flash[:error] %>
 
+<% if logged_in? %>
+	<p>You are currently logged into the system and cannot sign up as a new user</p>
+<% else %>
+
 <h2>Signup for <%= @csa %></h2>
 <%= form_for :user, :url => csa_shares_url(@csa), :method => :post do |f| -%>
   <p>
@@ -21,3 +25,5 @@
   
   <p><%= submit_tag 'Create' %></p>
 <% end -%>
+
+<% end %>
