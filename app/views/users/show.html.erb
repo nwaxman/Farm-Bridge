@@ -2,11 +2,9 @@
 <!-- We should have membership info that user supplied to the CSA so that the CSA manager can see the user's contact info or membership info.-->
 
 <h3>Membership Profile </h3>
-<p> Contact Email:
-<p> Contact Phone:
-<p> Membership Status:
-<p> Address:
-	
+<p> Contact Email: <%= current_user.email%>
+<p> Contact Phone: <%= current_user.phone %>
+<p> Address: <%= current_user.address_1 %> <%= current_user.address_2 %> <%= current_user.city %> <%= current_user.state %> <%= current_user.zip %>	
 
 <h3>CSAs</h3>
 <% if current_user.csas.blank? %>

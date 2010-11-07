@@ -1,11 +1,41 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+    id:                     1
+    user_id:                2
+    offering_id:            1
+    deposit_received:       true
+  
+two:
+    id:                     2
+    user_id:                2
+    offering_id:            3
+    paid:                   true
+    
+three:
+    id:                     3
+    user_id:                2
+    offering_id:            5
+    paid:                   true
+    
+four:
+    id:                     4
+    user_id:                3
+    offering_id:            2
+    deposit_received:       true
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+five:
+    id:                     5
+    user_id:                3
+    offering_id:            4
+    paid:                   true
+
+six:
+    id:                     6
+    user_id:                3
+    offering_id:            5
+    paid:                   true
+
+six:
+    id:                     7
+    user_id:                3
+    offering_id:            6
+    paid:                   true

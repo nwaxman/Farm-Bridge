@@ -1,10 +1,79 @@
 <h1><%= @csa.name %></h1>
-<p><%= @csa.description %>Manager: <%= @csa.manager %></p>
+<p>Manager: <%= @csa.manager %></p>
+<p><strong>Description</strong><br/>
+<%= @csa.description %></p>
+  
+<h2>Members</h2>
 
 
 
+<div class="tabletitle">
+<table>
+<tr>
+	<td class="tbname">Member</th>
+	<td class="tbshare">Share</th>
+	<td class="tbpayment">Payment Status</th>
+<tr>
+</table>
+</div>
+
+<% Member.members_for_csa(@csa).each do |member| 
+   shares = member.user.shares %>
+	
+	<div class="tablewrapper">
+	<table>
+	
+			<tr>
+				<td class="tbname"><%= member.user.name %></td>
+				<td class="tbshare">
+					<table>
+						<% shares.each do |share| %>
+
+							<% if share.offering.csa.id == @csa.id %>
+
+								<tr>
+									<td><%= share.offering.to_s %></td>
+								</tr>	
+
+							<% end %>
+
+						<% end %>
+					</table>
+				</td>
+				<td class="tbpayment">
+					<table>
+						<% shares.each do |share| %>
+
+							<tr>
+								<td>
+
+									<% if share.paid %>
+										Paid
+									<% elsif share.deposit_received %>
+										Deposit Received
+									<% else %>
+										No deposit
+									<% end %>
+									
+									[<%= link_to 'Edit', edit_share_url(share) %>]
+
+								</td>
+							</tr>
+
+						<% end %>
+					
+					</table>
+				</td>
+			</tr>
+	
+	</table>
+	</div>
+	
+<% end %>
+
+
+<h1>Members by share</h1>
 <div id="offerings">  
-<h2>Offerings</h2>
 
 <% @csa.offerings.each do |offering| %>
 
@@ -47,121 +116,44 @@
 <% end %>
 </div>
 
-<%= link_to 'add another offering', new_csa_offering_url(@csa) %>
+<h2>Calendar</h2>
+[place holder for CSA calendar of events]
+[place holder for "Create new Event" button]
+<h4>
+	<p>Weeks until season begins  _______ </p>	
+	<p>Deposit Due Date: XX/XX/XX</p>
+	<p>Full Payment Due Date: XX/XX/XX</p>
+	
+<h3>
+	<p>Upcoming Events</p>
+</h3>
+
+	<p> Pot Luck at Jo's Place'</p>
+	<p> June 1st</p>
+	<hr>
+	<p> Farm Visit</p>
+	<p> June 2nd</p>
+	<hr>
+	<p> Apple picking</p>
+	<p> June 2nd</p>
+	<hr>
+	<p> PICKUP DAY</p>
+	<p> June 7th</p>
+	<hr>
+	<p> PICKUP DAY</p>
+	<p> June 14thth</p>
+	<hr>
+	
+</h4>
 
 
-<div class="tabletitle">
-<table>
-<tr>
-	<td class="tbname">Member</th>
-	<td class="tbshare">Share</th>
-	<td class="tbpayment">Payment Status</th>
-<tr>
-</table>
-</div>
-
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">Noah</td>
-	<td class="tbshare">
-		<table>
-			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
-
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">T-dubs</td>
-	<td class="tbshare">
-		<table>
-			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
-
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">Rune</td>
-	<td class="tbshare">
-		<table>
-			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
+<h2>Work</h2>
+[place holder for workshift Calendar]
+[place holder for "manage your workshifts" button]
+<h3>
+	<p>There are ___ open shifts that need to be filled at this weeks Pickup</p>
+	<p>Three week workshift outlook</p>
+	<p>There are ___ members who have signed up to work but not yet worked <a href="#">email them</a></p>
+	<p>There are ___ members who have not signed up to work <a href="#">email them</a></p>	
+</h3>
 
