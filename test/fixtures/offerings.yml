@@ -1,11 +1,31 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id:           1
+  csa_id:       1
+  vendor_id:    1
+  
+two:
+  id:           2
+  csa_id:       1
+  vendor_id:    2
+    
+three:
+  id:           3
+  csa_id:       1
+  vendor_id:    3
+  
+four:
+  id:           4
+  csa_id:       1
+  vendor_id:    4
+  
+five:
+  id:           5
+  csa_id:       1
+  vendor_id:    5
+    
+six:
+  id:           6
+  csa_id:       1
+  vendor_id:    6
+      
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
