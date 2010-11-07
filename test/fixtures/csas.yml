@@ -1,7 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-
-two:
-  name: MyString
+  id:   1
+  name: Test CSA
+  email: testcsa@gmail.com
+  description: This is a test CSA.
+  manager_id: 1
+  city: New York
+  state: New York
+  neighborhood: Brooklyn
+  phone: 3475555555

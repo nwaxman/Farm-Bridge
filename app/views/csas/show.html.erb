@@ -5,81 +5,6 @@
   
 <h2>Members</h2>
 
-<table border="1">
-<tr>
-	<th>Member</th>
-	<th>Share</th>
-	<th>Payment</th>
-	<th>Edit Payment</th>
-</tr>
-	
-	<% Member.members_for_csa(@csa).each do |member| %>
-	
-		<% shares = member.user.shares %>
-	
-		<tr>
-			<td><%= member.user.name %></td>
-			<td>
-				<table>
-				
-				<% shares.each do |share| %>
-
-					<% if share.offering.csa.id == @csa.id %>
-	
-						<tr>
-							<td><%= share.offering.to_s %></td>
-						</tr>	
-
-					<% end %>
-
-				<% end %>
-				
-				</table>
-				
-			</td>
-			<td>
-				<table>
-				
-				<% shares.each do |share| %>
-				
-					<tr>
-						<td>
-
-							<% if share.paid %>
-								Paid
-							<% elsif share.deposit_received %>
-								Deposit Received
-							<% else %>
-								No deposit
-							<% end %>
-							
-						</td>
-					</tr>
-
-				<% end %>
-				
-				</table>
-				
-			</td>
-			<td>
-				<table>
-				
-				<% shares.each do |share| %>
-				
-					<tr>
-						<td>
-							[<%= link_to 'edit status', edit_share_url(share) %>]
-						</td>
-					</tr>
-
-				<% end %>
-				
-				</table>
-				
-			</td>	
-			
-			
-		</tr>
 
 
 <div class="tabletitle">
@@ -92,108 +17,101 @@
 </table>
 </div>
 
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">Noah</td>
-	<td class="tbshare">
-		<table>
+<% Member.members_for_csa(@csa).each do |member| 
+   shares = member.user.shares %>
+	
+	<div class="tablewrapper">
+	<table>
+	
 			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
+				<td class="tbname"><%= member.user.name %></td>
+				<td class="tbshare">
+					<table>
+						<% shares.each do |share| %>
 
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">T-dubs</td>
-	<td class="tbshare">
-		<table>
-			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
+							<% if share.offering.csa.id == @csa.id %>
 
-<div class="tablewrapper">
-<table>
-<tr>
-	<td class="tbname">Rune</td>
-	<td class="tbshare">
-		<table>
-			<tr>
-				<td>Farm Share</td>
-			</tr>	
-			<tr>
-				<td>Eggs Share</td>
-			</tr>
-			<tr>
-				<td>Share of Strange Foods from Denmark</td>
-			</tr>
-		</table>
-	</td>
-	<td class="tbpayment">
-		<table>
-				<tr>
-					<td>Paid</td>
-				</tr>	
-				<tr>
-					<td>Deposit</td>
-				</tr>
-				<tr>
-					<td>Interested</td>
-				</tr>
-					
-			</table>
-	</td>
-</tr>
-</table>
-</div>
+								<tr>
+									<td><%= share.offering.to_s %></td>
+								</tr>	
 
+							<% end %>
+
+						<% end %>
+					</table>
+				</td>
+				<td class="tbpayment">
+					<table>
+						<% shares.each do |share| %>
+
+							<tr>
+								<td>
+
+									<% if share.paid %>
+										Paid
+									<% elsif share.deposit_received %>
+										Deposit Received
+									<% else %>
+										No deposit
+									<% end %>
+									
+									[<%= link_to 'Edit', edit_share_url(share) %>]
+
+								</td>
+							</tr>
+
+						<% end %>
+					
+					</table>
+				</td>
+			</tr>
+	
+	</table>
+	</div>
+	
+<% end %>
+
+
+<h1>Members by share</h1>
+<div id="offerings">  
+
+<% @csa.offerings.each do |offering| %>
+
+<div class="offering">
+	<h3><%= offering %></h3>
+    <h4>No Deposit</h4>
+    <% if offering.depositless_shares.blank? %>
+    	<p><em>none</em></p>
+    	<% else %>
+		<ul>
+    	<% for share in offering.depositless_shares %>
+    	<li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+    	<% end %>
+     	</ul>
+    <% end %>
+   
+	<h4>Deposit Received</h4>
+    <% if offering.deposit_received_shares.blank? %>
+      <p><em>none</em></p>
+    <% else %>
+      <ul>
+      <% for share in offering.deposit_received_shares %>
+        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+      <% end %>
+      </ul>
+    <% end %>
+    
+	<h4>Paid</h4>
+    <% if offering.paid_shares.blank? %>
+      <p><em>none</em></p>
+    <% else %>
+      <ul>
+      <% for share in offering.paid_shares %>
+        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
+      <% end %>
+      </ul>
+    <% end %>
+
+  </div>
+<% end %>
+</div>

@@ -1,11 +1,37 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one: 
+  id:           1
+  name:         Happy Upstate Farm
+  description:  Vegetables - Full share
+  user_id:      1
+  
+two: 
+  id:           2
+  name:         Happy Upstate Farm
+  description:  Vegetables - Half share
+  user_id:      1
+  
+three: 
+  id:           3
+  name:         Angry Downstate Farm
+  description:  Meat - Full share
+  user_id:      1
+ 
+four:
+  id:           4
+  name:         Angry Downstate Farm
+  description:  Meat - Half share
+  user_id:      1
+  
+five:
+  id:           5
+  name:         Franks farm
+  description:  Eggs
+  user_id:      1
+  
+six:
+  id:           6
+  name:         Ghandi's Farm
+  description:  Peace
+  user_id:      1
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
