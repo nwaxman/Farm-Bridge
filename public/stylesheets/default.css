@@ -257,3 +257,39 @@ color: #54b539;
 	margin: 10px auto;
 	padding: 10px 0 0 10px;
 }
+
+.tabletitle {
+	border:#ccc 1px solid;
+	margin: 10px auto;
+	padding: 10px 0 0 10px;
+	font-size: 14px;
+	font-weight: bold;	
+	text-align: left;
+	text-transform:uppercase;
+}
+
+.tablewrapper {
+	border:#ccc 1px solid;
+	margin: 10px auto;
+	padding: 10px 0 0 10px;
+	text-align: left;
+	vertical-align:text-top;
+}
+
+td.tbname{
+	width:180px;
+}
+
+td.tbshare{
+	width:250px;
+}
+
+td.tbpayment{
+	width:250px;
+}
+
+
+.tabletext {
+	
+}
+
