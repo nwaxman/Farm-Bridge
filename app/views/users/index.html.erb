@@ -1,9 +1,14 @@
 <% if logged_in? -%>
 	<h1>Welcome Back to FarmBridge</h1>
 	<br>
-	<h2>Ready to Finish Your Set-Up?</h2>
-	<p>You have only two steps to go. <%= link_to "Start by completing your CSA profile.", new_csa_url  %></p> 
-
+	
+	<% csa = Member.managed_csa_for_user(current_user) 
+	if csa.blank? %>
+		<h2>Ready to Finish Your Set-Up?</h2>
+		<p>You have only two steps to go. <%= link_to "Start by completing your CSA profile.", new_csa_url  %></p>
+	<% else %>
+		<p>You have already set up your CSA. Go you!</p>
+	<% end %>
 
 <% else -%>
 	<h1>Welcome to FarmBridge</h1>
