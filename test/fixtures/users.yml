@@ -49,4 +49,292 @@ three:
   state:                     New York
   zip:                       10003
 
+ four:
+    id:                        4
+    login:                     Dumbo@music.com
+    email:                     Dumbo@music.com
+    name:                      Dumbo The Elephant
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+five:
+    id:                        5
+    login:                     George@music.com
+    email:                     George@music.com
+    name:                      George Clinton and the P-Funk Freaks
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+six:
+    id:                        6
+    login:                     Bowwow@music.com
+    email:                     Bowwow@music.com
+    name:                      bow wow wow 
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+seven:
+    id:                        7
+    login:                     Debbie@music.com
+    email:                     Debbie@music.com
+    name:                      Debbie Deb
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+eight:
+    id:                        8
+    login:                     Disco@music.com
+    email:                     Disco@music.com
+    name:                      Disco Party Man
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+nine:
+    id:                        9
+    login:                     Mermaid@music.com
+    email:                     Mermaid@music.com
+    name:                      Little Mermaid
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+ten:
+    id:                        10
+    login:                     Nemo@music.com
+    email:                     Nemo@music.com
+    name:                      Nemo
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
 
+eleven:
+    id:                        11
+    login:                     odb@music.com
+    email:                     odb@music.com
+    name:                      Ol Dirty Bastard
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+twelve:
+    id:                        12
+    login:                     rza@music.com
+    email:                     rza@music.com
+    name:                      RZA
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+            
+thirteen:
+    id:                        13
+    login:                     Tianwei@music.com
+    email:                     Tianwei@music.com
+    name:                      T-Dubs Liu
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+
+fourteen:
+    id:                        14
+    login:                     Rune@music.com
+    email:                     Rune@music.com
+    name:                      Rappin Rune 4 Real 
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+fifteen:
+    id:                        15
+    login:                     noah@music.com
+    email:                     noah@music.com
+    name:                      Freaky Farmer Noah
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+sixteen:
+    id:                        16
+    login:                     Cindy@music.com
+    email:                     Cindy@music.com
+    name:                      lil' C Wong 
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+seventeen:
+    id:                        17
+    login:                     Julio@music.com
+    email:                     Julio@music.com
+    name:                      Terra tha Terror
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+eighteen:
+    id:                        18
+    login:                     Greg@music.com
+    email:                     Greg@music.com
+    name:                      Git Greg Gotchaback
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+nineteen:
+    id:                        19
+    login:                     WarrenG@music.com
+    email:                     WarrenG@music.com
+    name:                      Warren G
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+    
+twenty:
+    id:                        20
+    login:                     Slick@music.com
+    email:                     Slick@music.com
+    name:                      Slick Rick
+    salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
+    crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
+    created_at:                <%= 5.days.ago.to_s :db  %>
+    remember_token_expires_at: <%= 1.days.from_now.to_s %>
+    remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb     
+    phone:                     3475555555
+    address_1:                 721 Broadway
+    address_2:                 4th floor
+    city:                      New York
+    state:                     New York
+    zip:                       10003
+            
