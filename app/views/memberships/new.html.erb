@@ -1,0 +1,16 @@
+<%= flash[:error] %>
+
+<h2>Signup for <%= @csa %></h2>
+<%= form_for :user, :url => csa_memberships_url(@csa), :method => :post do |f| -%>
+<!-- :partial are snippets of frequent code, below is the address form code-->
+<%= render :partial => 'users/form', :locals => {:f => f} %>
+<p>
+  <%= label_tag 'share notes' %><br />
+  <%= text_area_tag :share_notes, nil, {:name => "membership[share_notes]", :cols => 30, :rows => 5 } %>
+</p>
+
+Choose or Create Your CSA
+<a href="/csas/new"> Link </a>
+
+<p><%= submit_tag 'Create' %></p>
+<% end -%>
