@@ -1,6 +1,24 @@
 <h1><%= @csa.name %></h1>
 <p><%= @csa.description %>Manager: <%= @csa.manager %></p>
 
+  
+<h2>Members</h2>
+
+<% Member.members_for_csa(@csa).each do |member| %>
+
+	<%= member.user.name %> <br />
+	
+	<% member.user.shares.each do |share| %>
+	
+		<% if share.offering.csa.id == @csa.id %>
+	
+		>>> <%= share.offering.to_s %>  >> [<%= link_to 'edit status', edit_share_url(share) %>] <br />
+	
+		<% end %>
+	
+	<% end %>
+
+<% end %>
 
 
 <div id="offerings">  
