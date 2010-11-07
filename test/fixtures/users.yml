@@ -36,7 +36,7 @@ three:
   id:                        3
   login:                     evelynchampagne@music.com
   email:                     evelynchampagne@music.com
-  name:                      Evelyn Champagne King
+  name:                      Evelyn Champagne King  
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
   crypted_password:          12085cc8c5d5065cbc460628d2aa5c6981911f62 # 'monkey'
   created_at:                <%= 5.days.ago.to_s :db  %>
