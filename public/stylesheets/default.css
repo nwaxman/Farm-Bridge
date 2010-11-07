@@ -1,11 +1,11 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #749865 url(../images/bg.gif) repeat-x;
+	background: #68b349 url(../images/bg.gif) repeat-x;
 	font: normal small Helvetica, sans-serif;
 	line-height: 1.8em;
-	color: #838b91;
-}
+/*	color: #838b91;
+*/}
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -222,19 +222,19 @@ color: #54b539;
 /* Footer */
 
 #footer {
-	padding: 40px 0 60px 0;
+	padding: 40px 0 40px 0;
 	background: url(../images/img08.gif) repeat-x;
 }
 
 #footer p {
 	width: 750px;
-	color: #A6C09B;
+	color: #eee;
 }
 
 #footer a {
 	background: none;
 	font-weight: bold;
-	color: #A6C09B;
+	color: #eee;
 }
 
 #legal {
