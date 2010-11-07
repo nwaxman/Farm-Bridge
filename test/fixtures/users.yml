@@ -49,7 +49,7 @@ three:
   state:                     New York
   zip:                       10003
 
- four:
+four:
     id:                        4
     login:                     Dumbo@music.com
     email:                     Dumbo@music.com
