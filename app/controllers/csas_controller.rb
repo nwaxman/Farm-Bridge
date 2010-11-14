@@ -12,13 +12,10 @@ class CsasController < ApplicationController
   
   def create
     @csa = Csa.new(params[:csa])
-    # @csa.users << current_user
     @csa.manager_id = current_user.id
 
     success = @csa && @csa.save
     
-    
-
     if success && @csa.errors.empty?
       redirect_to "/csas/#{@csa.id}/offerings/#{@csa.offerings.first.id}/edit"
     else
