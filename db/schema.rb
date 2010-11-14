@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20101017181330) do
     t.string   "state"
     t.string   "neighborhood"
     t.text     "description"
+    t.text     "agreement"
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20101017181330) do
     t.boolean  "deposit_received", :default => false
     t.boolean  "paid",             :default => false
     t.text     "notes"
+    t.boolean  "agreement",        :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,6 +6,7 @@ class CreateShares < ActiveRecord::Migration
       t.boolean :deposit_received, :default => false
       t.boolean :paid, :default => false
       t.text :notes
+      t.boolean :agreement, :default => false
       t.timestamps
     end
   end
