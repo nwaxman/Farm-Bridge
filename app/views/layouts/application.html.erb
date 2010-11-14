@@ -27,7 +27,8 @@
 </head>
 <body>
 	
-<!-- This is LOGO/TITLE	 -->
+	<div id="container">
+	
 		<div id="header">
 			<h1>Farm Bridge</h1>
 			<h2><% if logged_in? -%>
@@ -42,7 +43,7 @@
 		</div>
 	
 
-<!-- This is the MENU -->
+
 		<div id="menu">
 			<ul>
 				
@@ -64,20 +65,12 @@
 			</ul>
 		</div>
 	
-
-<!-- This is the MAIN -->
-		<div id="wrapper">
-			<div id="content">
-				
-				<div id="posts">
-					<div class="post">
-						<!-- <h2 class="title">Headings</h2> -->
-							<div class="story"><%= yield %></div>
-					</div>
-				</div>
+		<div id="content">
+			<%= yield %>
+		</div>
 			
 
-<!-- This is the SIDEBAR -->
+			<!-- This is the SIDEBAR -->
 				<!-- <div id="links">
 					<ul>
 						<li>
@@ -87,21 +80,18 @@
 							</ul>
 						</li>
 					</ul>
-				</div> -->
+				</div> 
 
 
-		<div style="clear: both;">&nbsp;</div>
-	</div>
-</div>
-
+			<div style="clear: both;">&nbsp;</div>-->
 
 <!-- This is the FOOTER -->
-<div id="footer">
-	<p id="legal">Copyright &copy; 2010 FarmBridge</p>
-	<p id="brand">FarmBridge</p>
-</div>
-
-
+		<div id="footer">
+			<p id="legal">Copyright &copy; 2010 FarmBridge</p>
+			<p id="brand">FarmBridge</p>
+		</div>
+		
+	</div>
 
 </body>
 </html>
