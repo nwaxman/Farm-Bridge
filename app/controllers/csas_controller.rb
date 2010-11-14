@@ -6,6 +6,10 @@ class CsasController < ApplicationController
   def signup
   end
   
+  def edit
+    @csa = Csa.find(params[:id])
+  end
+  
   def members
     @csa = Csa.find(params[:id])
   end
