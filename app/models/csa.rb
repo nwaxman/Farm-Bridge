@@ -10,6 +10,10 @@ class Csa < ActiveRecord::Base
     name
   end
   
+  def members
+    Member.members_for_csa(self).collect{|m| m.user}
+  end
+  
   def create_default_offering
     vendor = Vendor.create :user_id => self.manager_id,
                            :name => "Our Farm" 

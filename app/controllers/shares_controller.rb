@@ -12,6 +12,9 @@ class SharesController < ApplicationController
   end
   
   def create
+    
+   # raise Share.create(:agreement => params[:agreement]).inspect
+    
     begin
       user = nil
       
@@ -20,15 +23,21 @@ class SharesController < ApplicationController
       else
         user = User.new_placeholder_user params[:user]
         user.save!
+      end      
+      
+      # if params[:offerings].blank?
+      selected_offering_ids = params[:offerings].collect{|k,v| k.to_i}
+      
+      selected_offering_ids.each do |offering_id|
+      
+        Share.create!( :user_id => user.id, 
+                      :offering_id => offering_id,
+                      :notes => params[:notes],
+                      :agreement => params[:agreement])
       end
       
-      selected_offering_ids = params[:offerings].collect{|k,v| k.to_i}
-      selected_offering_ids.each do |offering_id|
-        Share.create(:user_id => user.id, 
-                      :offering_id => offering_id,
-                      :notes => params[:notes])
-      end
       redirect_to csa_url(@csa)
+      
     rescue ActiveRecord::RecordInvalid => e
         redirect_to "/csas/#{@csa.id}/signup", {:flash => {:error => "Something went wrong: #{e}"}}
     end

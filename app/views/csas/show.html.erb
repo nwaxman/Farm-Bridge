@@ -3,6 +3,24 @@
 <p><strong>Description</strong><br/>
 <%= @csa.description %></p>
 
+<p><strong>Members</strong><br/>
+<%= @csa.members.length %></p>
+
+<p><strong>Offerings</strong><br/>
+<% for offering in @csa.offerings %>
+  <%= offering %><br />
+<% end %>
+</p>
+<h4>Edit your CSA:</h4>
+<ul>
+  <li>
+    <%= link_to 'add provider',  new_csa_offering_url(@csa) %>
+  </li>
+    <li>
+    <%= link_to 'edit csa info',  edit_csa_url(@csa) %>
+  </li>
+</ul>
+
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#tabinterface').tabs();
