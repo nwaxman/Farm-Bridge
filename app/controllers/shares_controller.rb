@@ -14,11 +14,12 @@ class SharesController < ApplicationController
   def create
     begin
       user = nil
+      
       if logged_in?
         user = current_user
       else
         user = User.new_placeholder_user params[:user]
-        user.save!      
+        user.save!
       end
       
       selected_offering_ids = params[:offerings].collect{|k,v| k.to_i}

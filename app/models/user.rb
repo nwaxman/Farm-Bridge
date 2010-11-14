@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :phone, :address_1, :address_2, :city, :state, :zip
 
   def csas
     Member.csas_for_user(self)
@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
 
 
   def self.new_placeholder_user(opts)
+        
     pass = Digest::MD5.hexdigest((Time.now.to_i + rand(1000)).to_s)[0..8]
     
     opts[:password] = pass
@@ -47,7 +48,6 @@ class User < ActiveRecord::Base
     opts[:login] = opts[:email]
     
     self.new opts
-    
   end
 
   def to_s
