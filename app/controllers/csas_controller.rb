@@ -10,6 +10,12 @@ class CsasController < ApplicationController
     @csa = Csa.find(params[:id])
   end
   
+  def update
+    @csa = Csa.find(params[:id])
+    @csa.update_attributes params[:share]
+    redirect_to csa_url(@csa)
+  end
+  
   def members
     @csa = Csa.find(params[:id])
   end
