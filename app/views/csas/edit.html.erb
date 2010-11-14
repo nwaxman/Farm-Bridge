@@ -1,0 +1,9 @@
+<h2>Edit your CSA: <%= @csa %></h2>
+<% form_for :csa, :url => csa_path(@csa), :html => {:method => :put} do |f| -%>
+	<%= render :partial => 'form', :locals => {:f => f, :edit => true} %>
+	
+	<p><%= submit_tag 'Update your CSA' %></p>
+
+
+<% end -%>
+

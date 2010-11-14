@@ -1,38 +1,9 @@
 	<p>Step 1: Manager Profile -> <strong>Step 2: CSA Profile</strong> -> Step 3: Add Farm</p>
-
 <h1>2. Complete Your CSA Profile.</h1>	
 <p>To complete your CSA profile you will need to provide some basic information and write a description of your community.</p>
 <% form_for :csa, :url => csas_path do |f| -%>
-	<p><%= label_tag 'CSA Name' %>: 
-	<%= f.text_field :name %></p>
-	
-	<p>
-	<%= label_tag "Describe your CSA. Include as much detail as you like." %> View a <a href="sample.htm">CSA description sample here.</a><br />
-	<%= f.text_area :description %></p>
-	
-	<p>
-	<%= label_tag "CSA Agreement. Users must agree to become members" %> View a <a href="sample.htm">CSA agreement sample here.</a><br />
-	<%= f.text_area :description %></p>
+	<%= render :partial => 'form', :locals => {:f => f} %>
 
-  <h4 class="optional">Add more details about your CSA.</h4>
-  <div class="optional">
-  <!-- Put in the Partial Code that generates an address field and contact info... -->
-  <!-- CSA contact email ex: info@greenpointcsa.com -->
-	<p><%= label_tag "Email Contact" %> 
-	<%= f.text_field :email %></p>
-
-	<p><%= label_tag "Phone Contact" %>
-	<%= f.text_field :phone %></p>
-	
-	<p><%= label_tag "City" %>
-	<%= f.text_field :city %></p>
-
-	<p><%= label_tag "Neighborhood" %> 
-	<%= f.text_field :neighborhood %></p>
-
-	<p><%= label_tag "State" %> 
-	<%= f.text_field :state %></p>
-	</div>
 
 	<p><%= submit_tag 'Save and Add Farm' %></p>
 

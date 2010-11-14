@@ -6,12 +6,19 @@
 
 <h2>Signup for <%= @csa %></h2>
 <%= form_for :user, :url => csa_shares_url(@csa), :method => :post do |f| -%>
-  <p>
-    <h4><%= label_tag 'Offerings' %></h4>
-    <% for offering in @csa.offerings %>
-      <%= check_box_tag "offerings[#{offering.id}]" %> <label><%= offering %></label><br />
-    <% end %>
-  </p>
+  	
+	<p>
+    	<h4>Agreement</h4>
+		<%= @csa.agreement %> <br />
+		<%= check_box_tag "agreement" %> <label>I agree to the terms</label><br />
+  	</p>
+
+	<p>
+    	<h4><%= label_tag 'Offerings' %></h4>
+		<% for offering in @csa.offerings %>
+		  <%= check_box_tag "offerings[#{offering.id}]" %> <label><%= offering %></label><br />
+		<% end %>
+  	</p>
   
   <h4>Personal information</h4>
   <%= render :partial => 'users/form', :locals => {:f => f} %>
