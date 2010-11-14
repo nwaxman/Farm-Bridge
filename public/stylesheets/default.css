@@ -190,9 +190,17 @@ _______________________________________________________ */
 
 .offering {
 	border:#ccc 1px solid;
-	margin: 10px auto;
-	padding: 10px 0 0 10px;
+//	margin: 10px auto;
+//	padding: 10px 0 0 10px;
 	/* float: left; */
+	
+	float: left;
+	width: 45%;
+	height: 250px;
+}
+
+.offeringGuts {
+	display: none;
 }
 
 table.membertable 
