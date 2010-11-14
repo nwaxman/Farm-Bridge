@@ -1,23 +1,51 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #68b349 url(../images/bg.gif) repeat-x;
+	background: #FFFFFF url(../images/bg.jpg) repeat-x;
 	font: normal small Helvetica, sans-serif;
 	line-height: 1.8em;
-/*	color: #838b91;
-*/}
+}
+
+#container {
+	width: 750px;
+	margin: 0 auto;
+}
+
+#menu {
+	width: 100%;
+	height: 60px;
+	margin-bottom: 30px;
+}
+
+#content {
+	width: 100%;
+}
+
+#footer {
+	width: 100%;
+	padding: 40px 0 40px 0;
+	background-color: #96ca7f;
+}
+
+/*	FONTS
+_______________________________________________________ */
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 	font-family: Helvetica, Arial, serif;
 	font-weight: normal;
-	color: #468259;
+	color: #376646;
 }
 
-h2 {
-/*	padding-left: 20px;*/	
+h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+h2 {	
 	font-size: 22px;
+	margin-bottom: 12px;
 }
 
 h3 {
@@ -50,20 +78,8 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Wrapper */
-
-#wrapper {
-	padding: 12px 0 0 0;
-	background: #FFFFFF url(../images/img04.gif) repeat-x left bottom;
-}
-
-/* Menu */
-
-#menu {
-	width: 750px;
-	height: 60px;
-	margin: 0 auto;
-}
+/*	MENU STYLING
+_______________________________________________________ */
 
 #menu ul {
 	margin: 0;
@@ -85,23 +101,20 @@ a:hover {
 	width: 108px;
 	height: 36px;
 	padding: 20px 20px 0 20px;
-/* 	background-image: url(images/img08.gif); */
 	letter-spacing: -1px;
 	font: normal 1.3em Helvetica, Arial, serif;
 	color: #eee;
 }
 
 #menu a:hover {
-/* 	color: #60ba3b; */
-background: #E1E9E2;
-border-bottom: -4px solid #E1E9E2;
-text-decoration: none;
-color: #54b539;
+	background: #E1E9E2;
+	border-bottom: -4px solid #E1E9E2;
+	text-decoration: none;
+	color: #54b539;
 }
 
 #menu .active a {
-/*	background: #E1E9E2;
-*/	border-bottom: 4px solid #E1E9E2;
+	border-bottom: 4px solid #E1E9E2;
 	text-decoration: none;
 	color: #54b539;
 }
@@ -113,82 +126,29 @@ color: #54b539;
 	color: #54b539;
 }
 
-
-/* Header */
-
 #header {
 	width: 754px;
-/* 	height: 247px; */
 	margin: 0 auto;
 	padding: 13px 0 0 0;
 }
 
 #header h1 {
 	float: left;
-/* 	width: 104px; */
 	height: 47px;
-/* 	padding: 104px 100px 0 20px; */
-/* 	background: url(images/img05.jpg) no-repeat; */
 	line-height: 32px;
 	font-size: 30px;
 }
 
 #header h2 {
-/* 	float: right; */
-/* 	width: 494px; */
 	height: 47px;
-/* 	padding: 180px 20px 0 0; */
-/* 	background: url(images/img06.jpg) no-repeat; */
 	text-transform: lowercase;
 	text-align: right;
 	letter-spacing: -1px;
 	font-size: 14px;
-/* 	color: #FFFFFF; */
 }
 
-/* Content */
-
-#content {
-	width: 750px;
-	margin: 0 auto;
-}
-
-/* Posts */
-
-#posts {
-	float: left;
-/*	width: 510px;
-*/	width: 754px;
-}
-
-#posts .post {
-	padding-bottom: 30px;
-}
-
-#posts .story {
-	padding: 15px 20px 0 20px;
-	background: url(../images/img10.gif) repeat-x
-}
-
-#posts .meta {
-	padding: 5px 0 0 20px;
-	background: url(../images/img03.gif) repeat-x;
-}
-
-#posts .meta p {
-	margin: 0;
-	line-height: normal;
-	font-size: smaller;
-}
-
-#posts ul {
-	list-style: url(../images/img12.gif);
-}
-
-#posts ul li {
-}
-
-/* Links */
+/*	LINKS
+_______________________________________________________ */
 
 #links {
 	float: right;
@@ -219,12 +179,8 @@ color: #54b539;
 	font-size: smaller;
 }
 
-/* Footer */
-
-#footer {
-	padding: 40px 0 40px 0;
-	background: url(../images/img08.gif) repeat-x;
-}
+/*	FOOTER STYLING
+_______________________________________________________ */
 
 #footer p {
 	width: 750px;
@@ -306,7 +262,8 @@ td.tbpayment
 	width:15%;
 }
 
-/* Rune tabbed interface */
+/*	TABS
+_______________________________________________________ */
 
 .tabbox
 {
@@ -346,5 +303,34 @@ td.tbpayment
 {
 	display: none;
 }
+
+/* Posts
+
+#posts .post {
+	padding-bottom: 30px;
+}
+
+#posts .story {
+	padding: 15px 20px 0 20px;
+	background: url(../images/img10.gif) repeat-x
+}
+
+#posts .meta {
+	padding: 5px 0 0 20px;
+	background: url(../images/img03.gif) repeat-x;
+}
+
+#posts .meta p {
+	margin: 0;
+	line-height: normal;
+	font-size: smaller;
+}
+
+#posts ul {
+	list-style: url(../images/img12.gif);
+}
+
+#posts ul li {
+} */
 
 
