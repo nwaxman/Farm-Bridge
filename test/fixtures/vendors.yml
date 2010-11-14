@@ -6,7 +6,7 @@ one:
   
 two: 
   id:           2
-  name:         Happy Upstate Farm
+  name:         Left Midwest Farm
   description:  Vegetables - Half share
   user_id:      1
   
@@ -18,7 +18,7 @@ three:
  
 four:
   id:           4
-  name:         Angry Downstate Farm
+  name:         Ocean Farm
   description:  Meat - Half share
   user_id:      1
   
