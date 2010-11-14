@@ -2,7 +2,7 @@
 <h1>2. Complete Your CSA Profile.</h1>	
 <p>To complete your CSA profile you will need to provide some basic information and write a description of your community.</p>
 <% form_for :csa, :url => csas_path do |f| -%>
-	<%= render :partial => 'form', :locals => {:f => f} %>
+	<%= render :partial => 'form', :locals => {:f => f, :edit => false} %>
 
 
 	<p><%= submit_tag 'Save and Add Farm' %></p>
