@@ -274,6 +274,7 @@ color: #54b539;
 	padding: 10px 0 0 10px;
 	text-align: left;
 	vertical-align:text-top;
+	width: 100%;
 }
 
 td.tbname{
@@ -293,3 +294,51 @@ td.tbpayment{
 	
 }
 
+#calwrapper{
+	border:#ccc 1px solid;
+	margin: 10px auto;
+	padding: 10px 0 0 10px;
+	text-align: left;
+	vertical-align:text-top;
+	clear: both;
+}
+
+#calleft{
+	float: left;
+	padding: 10;
+	text-align: left;
+	width: 200px;
+	clear: both;
+	
+}
+
+#calright{
+	float:right;
+	border-left:#ccc 1px solid;
+	width: 300px;
+	clear: both;
+	
+	}
+
+
+
+.clearfix:after {
+content: ".";
+display: block;
+clear: both;
+visibility: hidden;
+line-height: 0;
+height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
