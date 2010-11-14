@@ -14,6 +14,10 @@
 	<%= label_tag "CSA Agreement. Users must agree to become members" %> View a <a href="sample.htm">CSA agreement sample here.</a><br />
 	<%= f.text_area :description %></p>
 
+  <h4 class="optional">Add more details about your CSA.</h4>
+  <div class="optional">
+  <!-- Put in the Partial Code that generates an address field and contact info... -->
+  <!-- CSA contact email ex: info@greenpointcsa.com -->
 	<p><%= label_tag "Email Contact" %> 
 	<%= f.text_field :email %></p>
 
@@ -28,6 +32,7 @@
 
 	<p><%= label_tag "State" %> 
 	<%= f.text_field :state %></p>
+	</div>
 
 	<p><%= submit_tag 'Save and Add Farm' %></p>
 
