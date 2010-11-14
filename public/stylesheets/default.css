@@ -31,8 +31,10 @@ body {
 }
 
 #footer {
+	padding-top: 10px;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
 	width: 100%;
-	padding: 40px 0 40px 0;
 	background-color: #96ca7f;
 }
 
@@ -98,10 +100,9 @@ _______________________________________________________ */
 }
 
 #menu li {
-	
 	display: block;
 	float: left;
-	width: 148px;
+	margin-right: 50px;
 	/*background: url(../images/img02.gif) no-repeat;*/
 }
 
@@ -113,10 +114,7 @@ _______________________________________________________ */
 }
 
 #menu a:hover {
-	background: #E1E9E2;
-	border-bottom: -4px solid #E1E9E2;
-	text-decoration: none;
-	color: #54b539;
+	text-decoration: underline;
 }
 
 #menu .active a {
@@ -186,30 +184,9 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 #footer p {
-	width: 750px;
-	color: #eee;
-}
-
-#footer a {
-	background: none;
 	font-weight: bold;
 	color: #eee;
 }
-
-#legal {
-	margin: 0 auto;
-	text-align: right;
-	font-size: 12px;
-}
-
-#brand {
-	margin: -35px auto 0 auto;
-	padding: 10px 0 0 35px;
-	background: url(../images/img09.gif) no-repeat left top;
-	letter-spacing: -1px;
-	font-size: 24px;
-}
-
 
 .offering {
 	border:#ccc 1px solid;
