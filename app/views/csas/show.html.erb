@@ -1,23 +1,48 @@
 <h1><%= @csa.name %></h1>
-<p>Manager: <%= @csa.manager %></p>
-<p><strong>Description</strong><br/>
+
+<p><strong>About Our CSA </strong> [<%= link_to 'edit csa description',  edit_csa_url(@csa) %>]
+<br/>
 <%= @csa.description %></p>
+
+<p><strong>Our Offerings</strong> [<%= link_to 'add new offering',  new_csa_offering_url(@csa) %>]
+<br/>
+<% for offering in @csa.offerings %>
+  <%= offering %> [<%= link_to 'edit offering',  edit_csa_offering_url(@csa) %>] <br />
+<% end %>
+</p>
+
+<p><strong>CSA Manager:</strong> <%= @csa.manager %></p>
+
+<p><strong>Contact Information</strong><br/>
+	<strong>Email:</strong> <%= @csa.email %><br/>
+	<strong>Phone:</strong> <%= @csa.phone %><br/>
+	<strong>City:</strong> <%= @csa.city %><br/>
+	<strong>Neighborhood:</strong> <%= @csa.neighborhood %><br/>
+	<strong>State:</strong> <%= @csa.state %>
+</p>
+
+<p><strong>Our Membership Agreement</strong><br/>
+<%= @csa.agreement %></p>
+
+
+<!-- Create a side bar with percent set-up and links for key actions-->
+
+
+
+<!-- Put this information on a sidebar for this information here-->
 
 <p><strong>Members</strong><br/>
 <%= @csa.members.length %></p>
 
-<p><strong>Offerings</strong><br/>
-<% for offering in @csa.offerings %>
-  <%= offering %><br />
-<% end %>
-</p>
+
+<!-- create a sidebar for this information here-->
 
 <h4>Edit your CSA:</h4>
 <ul>
   <li>
     <%= link_to 'add provider',  new_csa_offering_url(@csa) %>
   </li>
-    <li>
+  <li>
     <%= link_to 'edit csa info',  edit_csa_url(@csa) %>
   </li>
 </ul>

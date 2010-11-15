@@ -1,9 +1,9 @@
-<p><strong>Step 1: Manager Sign-up</strong> -> Step 2: CSA Profile -> Step 3: Add Offerings</p>
+<p><strong>Step 1: CSA Manager Sign-up</strong> -> Step 2: CSA Profile -> Step 3: Add Offerings</p>
 
 <h2>Sign-up as a CSA Manager</h2>
 
 <div id="form_main">
-	<p>Create your CSA manager profile. Required fields are highlighted in <strong>bold</strong>.</p>
+	<p>Required fields are highlighted in <strong>bold</strong>.</p>
 
 	<% @user.password = @user.password_confirmation = nil %>
 
@@ -18,7 +18,8 @@
 	<p><strong><%= label_tag 'password_confirmation', 'Confirm Password' %></strong>
 	<%= f.password_field :password_confirmation %></p>
 
-	<p><%= submit_tag 'Sign-up & Go to Next Step' %></p>
+	<p><%= submit_tag 'Save & Set-up CSA' %></p>
+
 </div>
 
 

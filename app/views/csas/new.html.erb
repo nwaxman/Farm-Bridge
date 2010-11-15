@@ -1,7 +1,10 @@
-	<p>Step 1: Manager Profile -> <strong>Step 2: CSA Profile</strong> -> Step 3: Add Farm</p>
-<h1>2. Complete Your CSA Profile.</h1>	
-<p>To complete your CSA profile you will need to provide some basic information and write a description of your community.</p>
-<% form_for :csa, :url => csas_path do |f| -%>
+<p>Step 1: CSA Manager Profile -> <strong>Step 2: CSA Profile</strong> -> Step 3: Add Farm</p>
+
+<h2>Create Your CSA</h2>	
+
+<p>Required fields are highlighted in <strong>bold</strong>.</p>
+
+	<% form_for :csa, :url => csas_path do |f| -%>
 	<%= render :partial => 'form', :locals => {:f => f, :edit => false} %>
 
 
