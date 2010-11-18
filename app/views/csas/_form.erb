@@ -1,0 +1,31 @@
+
+	<p><strong><%= label_tag 'CSA Name', 'Name' %></strong> 
+	<%= f.text_field :name %></p>
+	
+	<p><strong><%= label_tag "Email Contact", "Email" %></strong>
+	<%= f.text_field :email %></p>
+
+	<p><strong><%= label_tag "CSA Description", "Description" %></strong> - <a href="sample.htm">view an example description here</a><br/>
+	<%= f.text_area :description %></p>
+	
+    <% unless edit %><p><h4 class="optional" >Optional CSA Information.</h4></p><% end %>
+	<div <% unless edit %>class="optional"<% end %>>
+
+	<p>
+	<%= label_tag "CSA Agreement", "Membership Agreement" %> - <a href="sample.htm"> view a membership agreement example here.</a><br />
+	<%= f.text_area :agreement %></p>
+
+  <!-- Put in the Partial Code that generates an address field and contact info... -->
+  <!-- CSA contact email ex: info@greenpointcsa.com -->
+	<p><%= label_tag "Phone" %>
+	<%= f.text_field :phone %></p>
+	
+	<p><%= label_tag "City" %>
+	<%= f.text_field :city %></p>
+
+	<p><%= label_tag "Neighborhood" %> 
+	<%= f.text_field :neighborhood %></p>
+
+	<p><%= label_tag "State" %> 
+	<%= f.text_field :state %></p>
+	</div>

@@ -1,23 +1,62 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #68b349 url(../images/bg.gif) repeat-x;
+	background: #FFFFFF url(../images/bg.jpg) repeat-x;
 	font: normal small Helvetica, sans-serif;
 	line-height: 1.8em;
-/*	color: #838b91;
-*/}
+	text-align: center;
+}
+
+#container {
+	width: 750px;
+	margin: 0 auto;
+}
+
+#header {
+	width: 100%;
+	height: 50px;
+	padding-top: 10px;
+}
+
+#menu {
+	text-align: left;
+	width: 100%;
+	height: 60px;
+	margin-bottom: 30px;
+}
+
+#content {
+	width: 100%;
+	text-align: left;
+}
+
+#footer {
+	padding-top: 10px;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
+	width: 100%;
+	background-color: #96ca7f;
+}
+
+/*	FONTS
+_______________________________________________________ */
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 	font-family: Helvetica, Arial, serif;
 	font-weight: normal;
-	color: #468259;
+	color: #376646;
 }
 
-h2 {
-/*	padding-left: 20px;*/	
+h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+h2 {	
 	font-size: 22px;
+	margin-bottom: 12px;
 }
 
 h3 {
@@ -40,7 +79,7 @@ blockquote {
 }
 
 a {
-	background: url(../images/img03.gif) repeat-x left bottom;
+	/*background: url(../images/img03.gif) repeat-x left bottom;*/
 	text-decoration: none;
 	color: #468259;
 }
@@ -50,58 +89,36 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Wrapper */
-
-#wrapper {
-	padding: 12px 0 0 0;
-	background: #FFFFFF url(../images/img04.gif) repeat-x left bottom;
-}
-
-/* Menu */
-
-#menu {
-	width: 750px;
-	height: 60px;
-	margin: 0 auto;
-}
+/*	MENU STYLING
+_______________________________________________________ */
 
 #menu ul {
 	margin: 0;
 	padding: 0;
+	padding-top: 25px;
 	list-style: none;
 }
 
 #menu li {
 	display: block;
 	float: left;
-	width: 148px;
-	height: 60px;
-	padding: 0 0 0 2px;
-	background: url(../images/img02.gif) no-repeat;
+	margin-right: 50px;
+	/*background: url(../images/img02.gif) no-repeat;*/
 }
 
 #menu a {
 	display: block;
-	width: 108px;
-	height: 36px;
-	padding: 20px 20px 0 20px;
-/* 	background-image: url(images/img08.gif); */
 	letter-spacing: -1px;
 	font: normal 1.3em Helvetica, Arial, serif;
 	color: #eee;
 }
 
 #menu a:hover {
-/* 	color: #60ba3b; */
-background: #E1E9E2;
-border-bottom: -4px solid #E1E9E2;
-text-decoration: none;
-color: #54b539;
+	text-decoration: underline;
 }
 
 #menu .active a {
-/*	background: #E1E9E2;
-*/	border-bottom: 4px solid #E1E9E2;
+	border-bottom: 4px solid #E1E9E2;
 	text-decoration: none;
 	color: #54b539;
 }
@@ -113,82 +130,26 @@ color: #54b539;
 	color: #54b539;
 }
 
-
-/* Header */
-
-#header {
-	width: 754px;
-/* 	height: 247px; */
-	margin: 0 auto;
-	padding: 13px 0 0 0;
-}
+/*	HEADER STYLING	
+_______________________________________________________ */
 
 #header h1 {
 	float: left;
-/* 	width: 104px; */
 	height: 47px;
-/* 	padding: 104px 100px 0 20px; */
-/* 	background: url(images/img05.jpg) no-repeat; */
 	line-height: 32px;
 	font-size: 30px;
 }
 
 #header h2 {
-/* 	float: right; */
-/* 	width: 494px; */
 	height: 47px;
-/* 	padding: 180px 20px 0 0; */
-/* 	background: url(images/img06.jpg) no-repeat; */
 	text-transform: lowercase;
 	text-align: right;
 	letter-spacing: -1px;
 	font-size: 14px;
-/* 	color: #FFFFFF; */
 }
 
-/* Content */
-
-#content {
-	width: 750px;
-	margin: 0 auto;
-}
-
-/* Posts */
-
-#posts {
-	float: left;
-/*	width: 510px;
-*/	width: 754px;
-}
-
-#posts .post {
-	padding-bottom: 30px;
-}
-
-#posts .story {
-	padding: 15px 20px 0 20px;
-	background: url(../images/img10.gif) repeat-x
-}
-
-#posts .meta {
-	padding: 5px 0 0 20px;
-	background: url(../images/img03.gif) repeat-x;
-}
-
-#posts .meta p {
-	margin: 0;
-	line-height: normal;
-	font-size: smaller;
-}
-
-#posts ul {
-	list-style: url(../images/img12.gif);
-}
-
-#posts ul li {
-}
-
-/* Links */
+/*	LINKS
+_______________________________________________________ */
 
 #links {
 	float: right;
@@ -219,43 +180,27 @@ color: #54b539;
 	font-size: smaller;
 }
 
-/* Footer */
-
-#footer {
-	padding: 40px 0 40px 0;
-	background: url(../images/img08.gif) repeat-x;
-}
+/*	FOOTER STYLING
+_______________________________________________________ */
 
 #footer p {
-	width: 750px;
-	color: #eee;
-}
-
-#footer a {
-	background: none;
 	font-weight: bold;
 	color: #eee;
 }
 
-#legal {
-	margin: 0 auto;
-	text-align: right;
-	font-size: 12px;
-}
-
-#brand {
-	margin: -35px auto 0 auto;
-	padding: 10px 0 0 35px;
-	background: url(../images/img09.gif) no-repeat left top;
-	letter-spacing: -1px;
-	font-size: 24px;
-}
-
-
 .offering {
 	border:#ccc 1px solid;
-	margin: 10px auto;
-	padding: 10px 0 0 10px;
+//	margin: 10px auto;
+//	padding: 10px 0 0 10px;
+	/* float: left; */
+	
+	float: left;
+	width: 45%;
+	height: 250px;
+}
+
+.offeringGuts {
+	display: none;
 }
 
 table.membertable 
@@ -306,13 +251,16 @@ td.tbpayment
 	width:15%;
 }
 
-/* Rune tabbed interface */
+/*	TABS
+_______________________________________________________ */
 
 .tabbox
 {
 	width: 100%;
 	margin-top: 30px;
 }
+
+
 
 .tabnav 
 {
@@ -346,5 +294,35 @@ td.tbpayment
 {
 	display: none;
 }
+
+
+/* Posts
+
+#posts .post {
+	padding-bottom: 30px;
+}
+
+#posts .story {
+	padding: 15px 20px 0 20px;
+	background: url(../images/img10.gif) repeat-x
+}
+
+#posts .meta {
+	padding: 5px 0 0 20px;
+	background: url(../images/img03.gif) repeat-x;
+}
+
+#posts .meta p {
+	margin: 0;
+	line-height: normal;
+	font-size: smaller;
+}
+
+#posts ul {
+	list-style: url(../images/img12.gif);
+}
+
+#posts ul li {
+} */
 
 

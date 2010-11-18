@@ -2,6 +2,23 @@
 <html>
 <head>
 		<title>Farmbridge</title>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js" ></script>
+    <script>
+      $(window).load(function () {
+       // $("div.optional").hide();
+        $("div.optional").toggleClass("hidden");
+        $("h4.optional").prepend('<a href="#" class="optional">&gt;</a> ');
+        $("a.optional").click(function(){
+          $("div.optional").toggleClass("hidden");
+          return false;
+        });
+      });
+    </script>
+    <style>
+      div.hidden{
+        display:none;
+      }
+    </style>
 
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
@@ -10,7 +27,8 @@
 </head>
 <body>
 	
-<!-- This is LOGO/TITLE	 -->
+	<div id="container">
+	
 		<div id="header">
 			<h1>Farm Bridge</h1>
 			<h2><% if logged_in? -%>
@@ -25,10 +43,9 @@
 		</div>
 	
 
-<!-- This is the MENU -->
+
 		<div id="menu">
 			<ul>
-				
 				
 				<% if logged_in? %>
 					<% csa = Member.managed_csa_for_user(current_user) 
@@ -47,20 +64,12 @@
 			</ul>
 		</div>
 	
-
-<!-- This is the MAIN -->
-		<div id="wrapper">
-			<div id="content">
-				
-				<div id="posts">
-					<div class="post">
-						<!-- <h2 class="title">Headings</h2> -->
-							<div class="story"><%= yield %></div>
-					</div>
-				</div>
+		<div id="content">
+			<%= yield %>
+		</div>
 			
 
-<!-- This is the SIDEBAR -->
+			<!-- This is the SIDEBAR -->
 				<!-- <div id="links">
 					<ul>
 						<li>
@@ -70,21 +79,19 @@
 							</ul>
 						</li>
 					</ul>
-				</div> -->
+				</div> 
 
 
-		<div style="clear: both;">&nbsp;</div>
-	</div>
-</div>
-
+			<div style="clear: both;">&nbsp;</div>-->
 
 <!-- This is the FOOTER -->
-<div id="footer">
-	<p id="legal">Copyright &copy; 2010 FarmBridge</p>
-	<p id="brand">FarmBridge</p>
-</div>
+<br style="clear:both" />
 
-
+		<div id="footer">
+			<p>FarmBridge</p>
+		</div>
+		
+	</div>
 
 </body>
 </html>
