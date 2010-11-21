@@ -8,7 +8,7 @@
 	<p><strong>Our Offerings</strong> [<%= link_to 'add new offering',  new_csa_offering_url(@csa) %>]
 		<ul>
 		<% for offering in @csa.offerings %>
-	    	  <li><%= offering %> [<%= link_to 'edit offering',  edit_csa_offering_url(@csa) %>] </li>
+	    	  <li><%= offering %> [<%= link_to 'edit offering',  edit_offering_url(offering) %>] </li>
 		<% end %>
 		</ul>
 	</p>
@@ -63,16 +63,16 @@
 	<h4><strong>Add Members to Your CSA</strong></h4>
 	<ul>
 	  <li>
-	    <%= link_to 'upload list of members',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'upload list of members',  "" %>
 	  </li>
 	  <li>
-	    <%= link_to 'review sign-up process',  member_signup_url(@csa) %>
+	    <%= link_to 'review sign-up process',  "" %>
 	  </li>
 	  <li>
-	    <%= link_to 'invite members',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'invite members',  "" %>
 	  </li>
 	  <li>
-	    <%= link_to 'add new member',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'add new member',  "/csas/#{@csa.id}/add_member" %>
 	  </li>
 	  <li>
 	    <%= link_to 'manage member list',  csa_members_url(@csa) %>

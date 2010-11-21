@@ -1,0 +1,8 @@
+<h2>Add a New Member to <%= @csa %></h2>
+<%= flash[:error] %>
+<%= form_for :user, :url => "/csas/#{@csa.id}/create_member" do |f| -%>
+	<%= render :partial => 'users/form', :locals => {:f => f} %>
+	
+	<p><%= check_box_tag "share[agreement]"  %> This member has signed the membership agreement.</p>
+	<p><%= submit_tag "Add Member" %></p>
+<% end %>
