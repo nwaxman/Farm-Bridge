@@ -13,6 +13,11 @@ class OfferingsController < ApplicationController
     begin
       @vendor = current_user.vendors.create! params[:vendor]
       @offering = Offering.create! :vendor => @vendor, :csa => @csa
+      
+      if @csa.offerings.count == 1
+        flash[:notice]  = "You have now set up your CSA. Congratulations!!"
+      end
+      
       redirect_to csa_url(@csa)
     rescue ActiveRecord::RecordInvalid => e
       redirect_to new_csa_offering_url(@csa)
