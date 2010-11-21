@@ -9,7 +9,7 @@
   	
 	<p>
     	<h4>Agreement</h4>
-		<%= @csa.agreement %> <br />
+		<%= @csa.agreement.gsub("\n", "<br />").html_safe %> <br />
 		<%= check_box_tag "agreement" %> <label>I agree to the terms</label><br />
   	</p>
 
