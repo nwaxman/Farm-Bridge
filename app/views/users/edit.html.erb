@@ -1,0 +1,8 @@
+<h2>Update Your Prfoile</h2>
+<%= form_for :user, :url => users_url(@user), :html => {:method => :put} do |f| -%>
+  
+ <%= render :partial => 'form', :locals => {:user => @user} %>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>

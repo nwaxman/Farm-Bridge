@@ -1,16 +1,23 @@
-<h2>Info for <%= current_user %></h2>
+<h2><%= current_user %>'s Profile</h2>
 <!-- We should have membership info that user supplied to the CSA so that the CSA manager can see the user's contact info or membership info.-->
 
-<h3>Membership Profile </h3>
-<p> Contact Email: <%= current_user.email%>
-<p> Contact Phone: <%= current_user.phone %>
-<p> Address: <%= current_user.address_1 %> <%= current_user.address_2 %> <%= current_user.city %> <%= current_user.state %> <%= current_user.zip %>	
+<p>
+	<h4><strong>Personal Information</strong></h4>
+	 <strong>Email:</strong> <%= current_user.email%><br/>
+	 <strong>Phone:</strong> <%= current_user.phone %><br/>
+	 <strong>Address:</strong> <%= current_user.address_1 %> <%= current_user.address_2 %><br/> 
+	 <strong>City:</strong> <%= current_user.city %><br/>
+	 <strong>State:</strong> <%= current_user.state %><br/>
+	 <strong>Zip Code:</strong> <%= current_user.zip %><br/>	
+</p>
 
-<h3>CSAs</h3>
+<p>
+	<h4><strong>CSA Membership Info</strong></h4>
+		<% csa = Member.managed_csa_for_user(current_user) 	
+		if csa.blank? %>
+			No CSA yet
+		<% else %>
+			<%= csa.name %>
+</p>
 
-<% csa = Member.managed_csa_for_user(current_user) 
-if csa.blank? %>
-	No CSA yet
-<% else %>
-	<%= csa.name %>
 <% end %>
