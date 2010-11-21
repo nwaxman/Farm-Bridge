@@ -9,6 +9,7 @@ Farmbridge::Application.routes.draw do
   
   resources :vendors
   
+  resources :offerings
 
   resources :users
 

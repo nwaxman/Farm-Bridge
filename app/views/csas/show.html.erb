@@ -8,7 +8,7 @@
 	<p><strong>Our Offerings</strong> [<%= link_to 'add new offering',  new_csa_offering_url(@csa) %>]
 		<ul>
 		<% for offering in @csa.offerings %>
-	    	  <li><%= offering %> [<%= link_to 'edit offering',  edit_csa_offering_url(@csa) %>] </li>
+	    	  <li><%= offering %> [<%= link_to 'edit offering',  edit_offering_url(offering) %>] </li>
 		<% end %>
 		</ul>
 	</p>

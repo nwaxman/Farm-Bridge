@@ -11,7 +11,7 @@ class CsasController < ApplicationController
   end
   
   def update
-    @csa.update_attributes params[:share]
+    @csa.update_attributes params[:csa]
     redirect_to csa_url(@csa)
   end
   
