@@ -27,6 +27,7 @@ Farmbridge::Application.routes.draw do
 
   match '/csas/:id/create_member' => 'csas#create_member', :as => :csa_create_member
 
+  match '/csas/:id/invite_members' => 'csas#invite_members', :as => :csa_invite_members
 
   match 'register' => 'users#create', :as => :register
 

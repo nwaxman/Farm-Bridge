@@ -1,0 +1,20 @@
+<h2>Invite members</h2>
+<script>
+	$(window).load(function(){
+		$("#invite_email_form").submit(function(){
+			var emails = $("#emails").val().replace(" ", "");
+			
+			link = "mailto:<%= @csa.email %>?subject=Welcome to FarmBridge&body=<%= render :partial => 'invite_text' %>&bcc="+ emails;
+			
+			document.location = link;
+			console.log(link);
+			return false;
+		})
+	});
+</script>
+<form id="invite_email_form">
+	<p>	<label>Enter email addresses of members you want to invite. Comma separated.</label></p>
+	<textarea cols="60" rows="5" id="emails"></textarea>
+	<p><input type="submit"  value="Send email" /></p>
+	<a style="display:none" href=""></a>
+</form>
