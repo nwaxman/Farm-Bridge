@@ -1,5 +1,5 @@
 class CsasController < ApplicationController
-  before_filter :find_csa, :except => [:signup, :create]
+  before_filter :find_csa, :except => [:signup, :create, :new]
   
   def show
   end
@@ -44,6 +44,7 @@ class CsasController < ApplicationController
     success = @csa && @csa.save
     
     if success && @csa.errors.empty?
+      flash[:notice] = "Congrats! Your CSA is now setup."
       redirect_to "/csas/#{@csa.id}/offerings/#{@csa.offerings.first.id}/edit"
     else
       flash.now[:error]  = "Something went wrong."
