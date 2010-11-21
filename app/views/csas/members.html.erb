@@ -7,55 +7,54 @@
   </li>
 <% end  %>
 </ul>
--->
+
 
 <div id="tabinterface" class="tabbox">
-	<!-- 4 Tabs [Paid | Not Paid | Deposit | All] -->
+	<!-- MACRO VIEW OF CSA OFFERINGS | DO WE NEED THIS ?
+	Would you be interested in a larger view of information
+	-->
 
-    <ul class="tabnav">
-        Sort by: <li><a href="#members">Paid Members </a></li>
-        <li><a href="#shares">No Deposit </a></li>
-        <li><a href="#shares">Deposit </a></li>
-        <li><a href="#shares">All </a></li>
-    </ul>
 
-<!-->
-    <ul class="tabnav">
-        <li><a href="#members">Sort by Member</a></li>
-        <li><a href="#shares">Sort by Share</a></li>
-    </ul>
--->
-
-	<!-- Listing the Offers that CSA offers-->
+	<!-- Listing the Offers that CSA offers -->
 	
 	<div id="offerings" class="tabdiv">
 		<table class="offeringstable">
-		<!-->	
 		<tr class="tabletitle">
 			<th class="tbname">Member</th>
 			<th class="tbshare">Share</th>
 			<th class="tbpayment">Payment</th>
 		<tr>
-		-->
 	
     <div id="shares" class="tabdiv">
 	
 		<div id="offerings">  
-
 		<% @csa.offerings.each do |offering| %>
 
 		<div class="offering">
+			<!-- HEADLINE of CSA OFFERING-->
 			<h3><%= offering %></h3>
-			<div id="placeholder"> [ PIE CHART ] </div>
-		   
-			<h4> No Deposit</h4> 
-			<%= offering.depositless_shares.count %>
-			<h4>Deposit Received</h4> <%= offering.deposit_received_shares.count %>
-			<h4>Paid</h4> <%= offering.paid_shares.count %>
 			
+			<!-- FILTER RESULTS -->
+			
+			<ul class="tabnav">
+		        Sort by: <li><a href="#members">Paid Members </a></li>
+		        <li><a href="#shares">No Deposit </a></li>
+		        <li><a href="#shares">Deposit </a></li>
+			 </ul>
+			
+			<div id="placeholder"> [ PIE CHART ] </div>
+		   	<!--
+			<h4> No Deposit</h4> 
+		
+				<%= offering.depositless_shares.count %>
+		 <h4>Deposit Received</h4> <%= offering.deposit_received_shares.count %>
+			<h4>Paid</h4> <%= offering.paid_shares.count %>
+			-->
 
 			<div class="offeringGuts">
+			<!-- offeringGuts is hidden style-->
 		    <% if offering.depositless_shares.blank? %>
+			<!--
 		    	<p><em>none</em></p>
 		    	<% else %>
 				<ul>
@@ -65,9 +64,11 @@
 		    	<% end %>
 		     	</ul>
 		    <% end %>
-
+			-->
+				
 			<h4>Deposit Received <%= offering.deposit_received_shares.count %></h4>
-		    <% if offering.deposit_received_shares.blank? %>
+		    <!--
+			<% if offering.deposit_received_shares.blank? %>
 		      <p><em>none</em></p>
 		    <% else %>
 		      <ul>
@@ -76,9 +77,12 @@
 		      <% end %>
 		      </ul>
 		    <% end %>
-
+			-->
+				
 			<h4>Paid <%= offering.paid_shares.count %></h4>
-		    <% if offering.paid_shares.blank? %>
+		  	
+			
+		  	<% if offering.paid_shares.blank? %>
 		      <p><em>none</em></p>
 		    <% else %>
 		      <ul>

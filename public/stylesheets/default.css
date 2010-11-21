@@ -8,7 +8,7 @@ body {
 }
 
 #container {
-	width: 750px;
+	width: 950px;
 	margin: 0 auto;
 }
 
@@ -77,6 +77,11 @@ blockquote {
 	font: italic small Helvetica, Arial, serif;
 	line-height: 1.6em;
 }
+
+p.oblique {
+	font-style:oblique
+	}
+
 
 a {
 	/*background: url(../images/img03.gif) repeat-x left bottom;*/

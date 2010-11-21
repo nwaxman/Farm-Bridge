@@ -5,14 +5,14 @@
 	<p><strong><%= label_tag "Email Contact", "Email" %></strong>
 	<%= f.text_field :email %></p>
 
-	<p><strong><%= label_tag "CSA Description", "Description" %></strong> - <a href="sample.htm">view an example description here</a><br/>
+	<p><strong><%= label_tag "CSA Description", "Description" %></strong> - <a href="/sample.html#description1" target="_blank">View an example of description text </a><br/>
 	<%= f.text_area :description %></p>
 	
     <% unless edit %><p><h4 class="optional" >Optional CSA Information.</h4></p><% end %>
 	<div <% unless edit %>class="optional"<% end %>>
 
 	<p>
-	<%= label_tag "CSA Agreement", "Membership Agreement" %> - <a href="sample.htm"> view a membership agreement example here.</a><br />
+	<%= label_tag "CSA Agreement", "Membership Agreement" %> - <a href="/sample.html#description2" target="_blank"> View a membership agreement example text.</a><br />
 	<%= f.text_area :agreement %></p>
 
   <!-- Put in the Partial Code that generates an address field and contact info... -->
