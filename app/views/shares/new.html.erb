@@ -1,36 +1,42 @@
 <%= flash[:error] %>
 
 <% if logged_in? %>
+
 	<p>You are currently logged into the system and cannot sign up as a new user</p>
+
 <% else %>
 
-<h2>Signup for <%= @csa %></h2>
+<h1><%= @csa %></h1>
+<h2>Sign-Up for a Share</h2>
+
 <%= form_for :user, :url => csa_shares_url(@csa), :method => :post do |f| -%>
-  	
 	<p>
-    	<h4>Agreement</h4>
-		<%= @csa.agreement %> <br />
-		<%= check_box_tag "agreement" %> <label>I agree to the terms</label><br />
+		<h4>Personal Information</h4>
+		<%= render :partial => 'users/form', :locals => {:f => f} %>
   	</p>
 
 	<p>
-    	<h4><%= label_tag 'Offerings' %></h4>
+    	<h4><%= label_tag 'Select Your Shares', 'Select Your Shares' %></h4>
 		<% for offering in @csa.offerings %>
-		  <%= check_box_tag "offerings[#{offering.id}]" %> <label><%= offering %></label><br />
+		  <%= check_box_tag "offerings[#{offering.id}]" %> <label><%= offering.vendor.name %></label><br />
 		<% end %>
+	</p>
+
+	<p>
+      	<h4><%= label_tag 'Share Notes' %></h4>
+	  	<%= text_area_tag :share_notes, nil, {:name => "notes", :cols => 30, :rows => 5 } %>
+	</p>
+  
+	<p>
+    	<h4>CSA Agreement</h4>
+		<%= @csa.agreement %> <br />
+		<%= check_box_tag "agreement" %> <label>I agree to these terms</label><br />
   	</p>
-  
-  <h4>Personal information</h4>
-  <%= render :partial => 'users/form', :locals => {:f => f} %>
-  <p>
-    <%= label_tag 'share notes' %><br />
-    <%= text_area_tag :share_notes, nil, {:name => "notes", :cols => 30, :rows => 5 } %>
-  </p>
-  
-  Choose or Create Your CSA
-  <a href="/csas/new"> Link </a>
+
   
   <p><%= submit_tag 'Create' %></p>
+
+  CSA managers who want to use FarmBridge to manage their CSAs <a href="/csas/new">click here</a>.
 <% end -%>
 
 <% end %>

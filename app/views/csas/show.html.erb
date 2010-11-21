@@ -49,35 +49,45 @@
 	<h3><strong>Next Steps</strong></h3>
 
 	<!-- create a sidebar for this information here-->
-	<h4><strong>Your CSA is 80% Complete</strong></h4>
-	<ul>
-	  <li>
-	    <%= link_to 'add your farm offerings',  new_csa_url(@csa) %>
-	  </li>
-	  <li>
-	    <%= link_to 'add membership agreement',  edit_csa_url(@csa) %>
-	  </li>
-	</ul>
-	<br/>
-
 	<h4><strong>Add Members to Your CSA</strong></h4>
 	<ul>
 	  <li>
-	    <%= link_to 'upload list of members',  new_csa_offering_url(@csa) %>
+<!--	    <%= link_to 'upload list of members',  new_csa_offering_url(@csa) %>   
+-->
+			<a href="nopage.html">upload list of members</a>
 	  </li>
 	  <li>
-	    <%= link_to 'review sign-up process',  member_signup_url(@csa) %>
+<!--	    <%= link_to 'review sign-up process',  member_signup_url(@csa) %>
+-->
+		<a href="nopage.html">review sign-up process</a>
 	  </li>
 	  <li>
-	    <%= link_to 'invite members',  new_csa_offering_url(@csa) %>
+<!--	    <%= link_to 'invite members',  new_csa_offering_url(@csa) %>
+-->
+		<a href="nopage.html">invite members</a>
 	  </li>
 	  <li>
 	    <%= link_to 'add new member',  new_csa_offering_url(@csa) %>
+	  </li>	
+	  <li>
+	    <%= link_to 'view subscription list',  csa_members_url(@csa) %>
 	  </li>
 	  <li>
 	    <%= link_to 'manage member list',  csa_members_url(@csa) %>
 	  </li>
 	</ul>
+	<br/>
+
+	<h4><strong>Edit Your CSA</strong></h4>
+	<ul>
+	  <li>
+	    <%= link_to 'add new offerings',  new_csa_offering_url(@csa) %>
+	  </li>
+	  <li>
+	    <%= link_to 'edit CSA information',  edit_csa_url(@csa) %>
+	  </li>
+	</ul>
+
 </div>
 
 
