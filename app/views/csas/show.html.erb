@@ -1,43 +1,30 @@
-<h1><%= @csa.name %></h1>
-
 <div id="posts">
 	<p><strong>About Our CSA</strong> [<%= link_to 'edit CSA description',  edit_csa_url(@csa) %>]
 	<br/>
 	<%= @csa.description %></p>
+	
+	<p><strong>Current Members</strong> [<%= link_to 'view members list',  csa_members_url(@csa) %>]<br/>
+	<%= @csa.members.length %></p>
 
 	<p><strong>Our Offerings</strong> [<%= link_to 'add new offering',  new_csa_offering_url(@csa) %>]
 		<ul>
 		<% for offering in @csa.offerings %>
-	    	  <li><%= offering %> [<%= link_to 'edit offering',  edit_csa_offering_url(@csa) %>] </li>
-		<% end %>
+			<li><%= offering %> [<%= link_to 'edit offering',  edit_offering_url(offering) %>] </li>
+				<ul>
+					<li>No Deposit: <%= offering.depositless_shares.count %></li>
+					<li>Deposit Received: <%= offering.deposit_received_shares.count %></li>
+					<li>Paid: <%= offering.paid_shares.count %></li>
+				</ul>
+			<% end %>
 		</ul>
 	</p>
 
-
-	<p><strong>Contact and Location Information</strong> [<%= link_to 'edit CSA contact information',  edit_csa_url(@csa) %>] <br/>
-		<ul>
-			<li><strong>Email:</strong> <%= @csa.email %></li>
-			<li><strong>Phone:</strong> <%= @csa.phone %></li>
-			<li><strong>City:</strong> <%= @csa.city %></li>
-			<li><strong>Neighborhood:</strong> <%= @csa.neighborhood %></li>
-			<li><strong>State:</strong> <%= @csa.state %></li>
-		</ul>
-	</p>
-
-	<p><strong>Core Group Members</strong> [<%= link_to 'edit core group',  edit_csa_url(@csa) %>] <br />
-		<ul>
-			<li><strong>Manager:</strong> <%= @csa.manager %></li>
-		</ul>
-	</p>
-
-
-	<p><strong>Our Membership Agreement</strong> [<%= link_to 'edit membership agreement',  edit_csa_url(@csa) %>] <br />
+	<!--<p><strong>Our Membership Agreement</strong> [<%= link_to 'edit membership agreement',  edit_csa_url(@csa) %>] <br />
 	<%= @csa.agreement %> <br/>
 	[<%= link_to 'review sign-up process',  member_signup_url(@csa) %>]
-    </p>
+    </p>-->
 
-	<p><strong>Current Members</strong> [<%= link_to 'view members list',  csa_members_url(@csa) %>]<br/>
-	<%= @csa.members.length %></p>
+	
 
 </div>
 
@@ -63,20 +50,34 @@
 	<h4><strong>Add Members to Your CSA</strong></h4>
 	<ul>
 	  <li>
-	    <%= link_to 'upload list of members',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'upload list of members',  "" %>
 	  </li>
 	  <li>
-	    <%= link_to 'review sign-up process',  member_signup_url(@csa) %>
+	    <%= link_to 'review sign-up process',  "" %>
 	  </li>
 	  <li>
-	    <%= link_to 'invite members',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'invite members',  "/csas/#{@csa.id}/invite_members" %>
 	  </li>
 	  <li>
-	    <%= link_to 'add new member',  new_csa_offering_url(@csa) %>
+	    <%= link_to 'add new member',  "/csas/#{@csa.id}/add_member" %>
 	  </li>
 	  <li>
 	    <%= link_to 'manage member list',  csa_members_url(@csa) %>
 	  </li>
+	</ul>
+	<br/>
+	
+	<h4><strong>CSA Information</strong></h4>
+	<ul>
+		 
+		<li><strong>Email:</strong> <%= @csa.email %></li>
+		<li><strong>Phone:</strong> <%= @csa.phone %></li>
+		<li><strong>City:</strong> <%= @csa.city %></li>
+		<li><strong>Neighborhood:</strong> <%= @csa.neighborhood %></li>
+		<li><strong>State:</strong> <%= @csa.state %></li>
+		<li><strong>Manager:</strong> <%= @csa.manager %></li>
+		<li>[<%= link_to 'Edit CSA Information',  edit_csa_url(@csa) %>]</li>
+		
 	</ul>
 </div>
 

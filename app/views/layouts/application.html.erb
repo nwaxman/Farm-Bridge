@@ -21,7 +21,6 @@
     </style>
 
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
 
 </head>
@@ -30,7 +29,18 @@
 	<div id="container">
 	
 		<div id="header">
-			<a href="#"><h1>Farm Bridge</h1></a>
+			<a href="#">
+				<h1>
+					<% if logged_in? %>
+						<% csa = Member.managed_csa_for_user(current_user) 
+						if !csa.blank? %>
+							<%= link_to csa.name, csa_url(csa) %>
+						<% end %>
+					<% else -%>
+						FarmBridge
+					<% end -%>
+				</h1>
+			</a>
 			<h2><% if logged_in? -%>
 			  <div id="user-bar-greeting">Logged in as <%= link_to_current_user :content_method => :login %></div>
 			  <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
@@ -50,7 +60,7 @@
 				<% if logged_in? %>
 					<% csa = Member.managed_csa_for_user(current_user) 
 					if !csa.blank? %>
-						<li><%= link_to csa.name, csa_url(csa) %></li>
+						<li><%= link_to "My CSA", csa_url(csa) %></li>
 					<% end %>
 				<% end %>
 				
@@ -65,6 +75,18 @@
 		</div>
 	
 		<div id="content">
+			
+			<% if flash[:notice] %>
+				<div id="notice">
+					<%= flash[:notice] %>
+				</div>
+			<% end %>
+			
+			<% if flash[:error] %>
+				<div id="error">
+					<%= flash[:error] %>
+				</div>
+			<% end %>
 			<%= yield %>
 		</div>
 			
@@ -85,8 +107,9 @@
 			<div style="clear: both;">&nbsp;</div>
 		</div>
 		</div>
+		</div>
 <!-- This is the FOOTER -->
-<br style="clear:both" />
+<!-- <br style="clear:both" /> -->
 
 		<div id="footer">
 			<p>FarmBridge</p>

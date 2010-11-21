@@ -30,13 +30,7 @@ body {
 	text-align: left;
 }
 
-#footer {
-	padding-top: 10px;
-	padding-bottom: 1px;
-	margin-bottom: 10px;
-	width: 100%;
-	background-color: #96ca7f;
-}
+
 
 /*	FONTS
 _______________________________________________________ */
@@ -204,22 +198,24 @@ _______________________________________________________ */
 /*	FOOTER STYLING
 _______________________________________________________ */
 #footer p {
-	width: 750px;
+	width: 950px;
 	color: #eee;
+	margin: 0 auto;
 	font-weight:bold;
+	text-align: left;
 }
 
 #footer a {
-	background: none;
 	font-weight: bold;
 	color: #eee;
 }
 
 
 #footer {
-	padding: 40px 0 40px 0;
-	background: url(../images/img08.gif) repeat-x;
+	padding: 32px 0 32px 0;
+	background: #68b349 url(../images/img08.gif) repeat-x;
 }
+
 
 
 
