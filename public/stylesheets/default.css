@@ -198,12 +198,23 @@ _______________________________________________________ */
 
 /*	FOOTER STYLING
 _______________________________________________________ */
-
 #footer p {
+	width: 750px;
+	color: #eee;
+	font-weight:bold;
+}
+
+#footer a {
+	background: none;
 	font-weight: bold;
 	color: #eee;
 }
 
+
+#footer {
+	padding: 40px 0 40px 0;
+	background: url(../images/img08.gif) repeat-x;
+}
 
 
 
