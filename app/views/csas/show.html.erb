@@ -1,7 +1,7 @@
 <div id="posts">
 	<p><strong>About Our CSA</strong> [<%= link_to 'edit CSA description',  edit_csa_url(@csa) %>]
 	<br/>
-	<%= @csa.description %></p>
+	<%= truncate(@csa.description.gsub("\n", "<br />").html_safe, :length => 200) %></p>
 	
 	<p><strong>Current Members</strong> [<%= link_to 'view members list',  csa_members_url(@csa) %>]<br/>
 	<%= @csa.members.length %></p>
@@ -49,17 +49,18 @@
 
 	<h4><strong>Add Members to Your CSA</strong></h4>
 	<ul>
-	  <li>
+	  <!-- <li>
 	    <%= link_to 'upload list of members',  "" %>
 	  </li>
 	  <li>
 	    <%= link_to 'review sign-up process',  "" %>
 	  </li>
+	-->
 	  <li>
-	    <%= link_to 'invite members',  "/csas/#{@csa.id}/invite_members" %>
+	    <%= link_to 'invite new members',  "/csas/#{@csa.id}/invite_members" %>
 	  </li>
 	  <li>
-	    <%= link_to 'add new member',  "/csas/#{@csa.id}/add_member" %>
+	    <%= link_to 'enter existing member info',  "/csas/#{@csa.id}/add_member" %>
 	  </li>
 	  <li>
 	    <%= link_to 'manage member list',  csa_members_url(@csa) %>

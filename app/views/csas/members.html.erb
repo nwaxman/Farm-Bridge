@@ -1,110 +1,34 @@
-<h1><%= @csa.name %> Subscriptions</h1>
-<!-- Lists everyone in the CSA 
-<ul>
-<% for member in @csa.members %>
-  <li>
-    <%= member.email %>
-  </li>
-<% end  %>
-</ul>
-
-
-<div id="tabinterface" class="tabbox">
-	<!-- MACRO VIEW OF CSA OFFERINGS | DO WE NEED THIS ?
-	Would you be interested in a larger view of information
-	-->
-
-
-	<!-- Listing the Offers that CSA offers -->
-	
-	<div id="offerings" class="tabdiv">
-		<table class="offeringstable">
-		<tr class="tabletitle">
-			<th class="tbname">Member</th>
-			<th class="tbshare">Share</th>
-			<th class="tbpayment">Payment</th>
-		<tr>
-	
-    <div id="shares" class="tabdiv">
-	
-		<div id="offerings">  
-		<% @csa.offerings.each do |offering| %>
-
-		<div class="offering">
-			<!-- HEADLINE of CSA OFFERING-->
-			<h3><%= offering %></h3>
-			
-			<!-- FILTER RESULTS -->
-			
-			<ul class="tabnav">
-		        Sort by: <li><a href="#members">Paid Members </a></li>
-		        <li><a href="#shares">No Deposit </a></li>
-		        <li><a href="#shares">Deposit </a></li>
-			 </ul>
-			
-			<div id="placeholder"> [ PIE CHART ] </div>
-		   	<!--
-			<h4> No Deposit</h4> 
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".tabnav a").click(function(){
+		var t = $(this).attr("href").split("#")[1];
+		$(".tabdiv").hide();
+		$("#" + t).show();
+		$(".tabnav a").removeClass("selected");
+		$(this).addClass("selected");
 		
-				<%= offering.depositless_shares.count %>
-		 <h4>Deposit Received</h4> <%= offering.deposit_received_shares.count %>
-			<h4>Paid</h4> <%= offering.paid_shares.count %>
-			-->
+		return false;
+	})
+});
+</script>
 
-			<div class="offeringGuts">
-			<!-- offeringGuts is hidden style-->
-		    <% if offering.depositless_shares.blank? %>
-			<!--
-		    	<p><em>none</em></p>
-		    	<% else %>
-				<ul>
-		    	<% for share in offering.depositless_shares %>
-		
-		    	<li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
-		    	<% end %>
-		     	</ul>
-		    <% end %>
-			-->
-				
-			<h4>Deposit Received <%= offering.deposit_received_shares.count %></h4>
-		    <!--
-			<% if offering.deposit_received_shares.blank? %>
-		      <p><em>none</em></p>
-		    <% else %>
-		      <ul>
-		      <% for share in offering.deposit_received_shares %>
-		        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
-		      <% end %>
-		      </ul>
-		    <% end %>
-			-->
-				
-			<h4>Paid <%= offering.paid_shares.count %></h4>
-		  	
-			
-		  	<% if offering.paid_shares.blank? %>
-		      <p><em>none</em></p>
-		    <% else %>
-		      <ul>
-		      <% for share in offering.paid_shares %>
-		        <li>User: <%= share.user %> [<%= link_to 'edit status', edit_share_url(share) %>]</li>
-		      <% end %>
-		      </ul>
-		    <% end %>
-		</div>
-		  </div>
-	</div>
-</div>
-		
-		<% end %>
-
-
-<!-- 
-
+<style>
+	.selected{ 
+		border: 1px solid red;
+	}
+	#shares {
+		display: none;
+	}
+	
+	#members {
+		display: inline;
+	}
+	
+</style>
 <div id="tabinterface" class="tabbox">
 
     <ul class="tabnav">
-        <li><a href="#members">Sort by Member</a></li>
+        <li><a class="selected" href="#members">Sort by Member</a></li>
         <li><a href="#shares">Sort by Share</a></li>
     </ul>
 
@@ -206,7 +130,5 @@
     </div>
 
 </div>
--->
 
-
-
+  
