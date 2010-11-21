@@ -45,7 +45,9 @@ class CsasController < ApplicationController
     
     if success && @csa.errors.empty?
       flash[:notice] = "Congrats! Your CSA is now setup."
-      redirect_to "/csas/#{@csa.id}/offerings/#{@csa.offerings.first.id}/edit"
+#      redirect_to "/csas/#{@csa.id}/offerings/#{@csa.offerings.first.id}/edit"
+      redirect_to "/csas/#{@csa.id}"
+
     else
       flash.now[:error]  = "Something went wrong."
       render :action => 'new'

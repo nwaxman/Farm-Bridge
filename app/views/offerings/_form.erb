@@ -1,9 +1,9 @@
 <a href="/sample.html#description3" target="_blank">View example text of an offering here</a><br/>
  <p>
-    <%= label_tag "Name" %>
+    <strong><%= label_tag "Offering and Vendor Name", "Offering and Vendor Name" %></strong> - example: "full vegetable share from Monkshood Nursery farm"<br />
     <%= text_field_tag "vendor[name]", (@offering.vendor ? @offering.vendor.name : "")  %>
   </p>
   <p>
-    <%= label_tag "Description" %><br />
+    <strong><%= label_tag "Describe This Offering", "Describe This Offering" %><br /></strong>
     <%= text_area_tag "vendor[description]", (@offering.vendor ? @offering.vendor.description : ""), {:cols => 50, :rows => 5} %>
   </p>
