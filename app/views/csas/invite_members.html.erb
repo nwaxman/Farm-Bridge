@@ -4,7 +4,7 @@
 		$("#invite_email_form").submit(function(){
 			var emails = $("#emails").val().replace(" ", "");
 			
-			link = "mailto:<%= @csa.email %>?subject=Welcome to FarmBridge?body=This is the body?bcc="+ emails;
+			link = "mailto:<%= @csa.email %>?subject=Welcome to FarmBridge&body=<%= render :partial => 'invite_text' %>&bcc="+ emails;
 			
 			document.location = link;
 			console.log(link);
