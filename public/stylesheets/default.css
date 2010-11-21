@@ -72,6 +72,11 @@ blockquote {
 	line-height: 1.6em;
 }
 
+p.oblique {
+	font-style:oblique
+	}
+
+
 a {
 	/*background: url(../images/img03.gif) repeat-x left bottom;*/
 	text-decoration: none;

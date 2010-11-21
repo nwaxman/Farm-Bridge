@@ -6,8 +6,7 @@
 
 <% else %>
 
-<h1><%= @csa %></h1>
-<h2>Sign-Up for a Share</h2>
+<h1>Sign-Up for a Share from <%= @csa %></h1>
 
 <%= form_for :user, :url => csa_shares_url(@csa), :method => :post do |f| -%>
 	<p>

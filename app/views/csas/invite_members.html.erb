@@ -1,4 +1,3 @@
-<h2>Invite members</h2>
 <script>
 	$(window).load(function(){
 		$("#invite_email_form").submit(function(){
@@ -12,9 +11,16 @@
 		})
 	});
 </script>
+
+<h2>Invite members</h2>
+
 <form id="invite_email_form">
-	<p>	<label>Enter email addresses of members you want to invite. Comma separated.</label></p>
+	<p>	<label>Enter the email addresses of members you want to invite, comma separated.  When you press the "Compose Email" button bellow your email will be open and you will be able to edit as you like before sending.</label></p>
+
 	<textarea cols="60" rows="5" id="emails"></textarea>
-	<p><input type="submit"  value="Send email" /></p>
+	
+	
+<h5>	FarmBridge will never share your information or the information of your members.	<h5>
+	<p><input type="submit"  value="Compose Email" /></p>
 	<a style="display:none" href=""></a>
 </form>
