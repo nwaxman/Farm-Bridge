@@ -12,7 +12,7 @@ class CsasController < ApplicationController
   
   def update
     @csa = Csa.find(params[:id])
-    @csa.update_attributes params[:share]
+    @csa.update_attributes params[:csa]
     redirect_to csa_url(@csa)
   end
   
